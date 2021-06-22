@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../assets/images/www-amico@2x.png";
+import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
@@ -117,7 +117,7 @@ const Home = () => {
                                     </div>
                                     <div className="col-lg-2 col-md-2 col-sm-2 program--box apply--box">
                                         <button className={'btn btn-primary btn-sm'}>Apply</button>
-                                        <a href="#" className={'program--details'}>Program details</a>
+                                        <Link to={`program-detail/123`} className={'program--details'}>Program details</Link>
                                         <a href="#" className={'program--see-more'}>See 65 more programs</a>
                                     </div>
                                 </div>

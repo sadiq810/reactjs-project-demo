@@ -1,47 +1,5 @@
 @charset "UTF-8";
-/*============================
-    CSS Index
-==============================
 
-    01. Default Css
-        - Scroll top
-    02. Section Spacing Css
-    03. Custom Container Css
-    04. Section title Css
-    05. Breadcrumb Css
-    06. Button Css
-    07. Testimonial Css
-    08. Video Popup Css
-    09. Header Css
-    10. Navigation Menu Css
-    11. Footer Area Css
-    12. Hero Area Css
-    13. Trending Article Area Css
-    14. From Following Area Css
-    15. Trending Topic Area Css
-    16. Newsletter Area Css
-    17. Featured Video Area Css
-    18. Latest Post Area Css
-    19. Recent Reading Area Css
-    20. Archive Search Area Css
-    21. Add Banner Area Css
-    22. Most Populer Area Css
-    23. Recent Article Area Css
-    24. Trusted Partners Area Css
-    25. Platform Area Css
-    26. Team Area Css
-    27. Blog Details Area Css
-    28. Author Post Area Css
-    29. FAQ Area Css
-    30. Contact us page Css
-    31. Error 404 page Css
-    32. Write Content page Css
-    33. login page Css
-
-/*=====  End of CSS Index  ======*/
-/*=============================================
-=             01. Default Css                 =
-=============================================*/
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -10444,8 +10402,8 @@ input[type="checkbox"] {
 }
 
 .form-check-input:checked {
-  background-color: #ffc4a0;
-  border-color: #ffc4a0;
+  background-color: #38524f;
+  border-color: #38524f;
 }
 
 .form-check-input:focus {
@@ -10581,7 +10539,7 @@ input[type="checkbox"] {
 }
 
 .title__hr {
-  width: 160px;
+  width: 148px;
 }
 .title__hr2 {
   width: 60%;
@@ -10652,6 +10610,8 @@ input[type="checkbox"] {
 
 .mWidth95percent {
   max-width: 95%;
+  border-radius: 5px;
+  overflow: auto;
 }
 
 .program--legend {
@@ -10718,6 +10678,14 @@ input[type="checkbox"] {
     padding-left: 10px;
     padding-top: 18px;
   }
+  .rounded--logo--programs {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .marginToSmallScreen {
+    margin-bottom: 37px;
+  }
 }
 
 .legend-wrapper {
@@ -10746,4 +10714,107 @@ input[type="checkbox"] {
 .programs--program--search button {
   height: 56px;
   width: 95px;
+}
+
+.rounded--logo--programs {
+  width: 160px;
+  height: 160px;
+  border: 4px solid #e7e6e0;
+  position: absolute;
+  bottom: -28px;
+  left: 74px;
+}
+
+.subheading {
+  font-size: 30px;
+  margin-top: 17px;
+  line-height: 2.5rem;
+}
+
+.facts--marker {
+  width: 18px;
+  height: 18px;
+  background: #38524f;
+  vertical-align: top;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.facts--container {
+  margin-left: 12px;
+}
+
+.facts--wrapper {
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 12px;
+}
+
+.program--description, .apply--form {
+  padding: 45px;
+  overflow: hidden;
+}
+
+.program--description ul {
+  list-style-type: disc;
+  margin-left: 80px;
+}
+
+.program--description h3:not(first) {
+  padding-top: 20px;
+}
+
+.program--description h3 {
+  padding-bottom: 20px;
+}
+
+.apply--form h4 {
+  margin-top: 30px;
+}
+
+.color-success {
+  color: #45df45;
+}
+
+.color-warning {
+  color: #bba402;
+}
+
+.form--btn-wrapper {
+  text-align: center;
+}
+.form--btn-wrapper button {
+  margin: 0 12px;
+}
+
+.apply--form select {
+  height: 43px !important;
+}
+
+table button {
+  height: 30px !important;
+  line-height: 29px !important;
+}
+
+.top--tabs a {
+  margin-right: 18px;
+}
+
+.profile--status {
+  font-size: 13px;
+}
+
+.profile--status p {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #f48512;
+  border-radius: 50%;
+}
+
+.multiple--radio--wrapper .form-check {
+  display: inline-block;
+  margin-right: 18px;
 }
