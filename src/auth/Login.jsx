@@ -1,13 +1,26 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {withRouter, Link} from 'react-router-dom';
 
 import mission from '../assets/images/mission.png';
 import SocialLogin from "./SocialLogin";
+import {connect} from "react-redux";
+import {authenticateUser, getNews} from "../redux/actions";
 
-const Login = (props) => {
+let Login = (props) => {
+    let [email, setEmail] = useState('');
+    let [password, setPassword] = useState('');
+
     useEffect(() => {
-        console.log(props);
-    })
+        if (props.isLoggedIn) {
+            props.history.push('/');
+        }
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+        props.login({users: props.users, credentials: {email, password}})
+    }
+
     return (
         <div id="main-wrapper" className={'overflow-hidden'}>
             <div className="site-wrapper-reveal">
@@ -33,14 +46,15 @@ const Login = (props) => {
 
                                                 <SocialLogin gogoleText={'Login with google'}/>
 
-                                                <form action="#">
+                                                <form action="#" onSubmit={submit}>
+                                                    {props.error && (<div className="alert alert-danger">{props.error}</div>)}
                                                     <label htmlFor="email" className={'bold--text'}>Email Address</label>
-                                                    <input type="email" />
+                                                    <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} required={'required'}/>
 
                                                     <label htmlFor="password" className={'bold--text'}>Password</label>
-                                                    <input type="password" />
+                                                    <input type="password" onChange={e => setPassword(e.target.value)} value={password}  required={'required'}/>
 
-                                                    <button type="button" onClick={() => props.history.push('/')} className="btn-primary btn-large bold--text">Log in</button>
+                                                    <button type="submit" className="btn-primary btn-large bold--text">Log in</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -55,4 +69,18 @@ const Login = (props) => {
     )
 }
 
-export default withRouter(Login);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        login: (payload) => dispatch(authenticateUser(payload)),
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.users.user,
+    users: state.users.userList,
+    loading: state.users.loading,
+    isLoggedIn: state.users.isLoggedIn,
+    error: state.users.error
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

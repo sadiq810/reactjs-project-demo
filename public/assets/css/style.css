@@ -10458,7 +10458,7 @@ input[type="checkbox"] {
 /*==================================
     33. login page Css
 ====================================*/
-.login-content form > input {
+.login-content form > input, .login-content form .two--inputs input {
   width: 100%;
   background-color: #ffffff;
   padding: 1px 20px;
