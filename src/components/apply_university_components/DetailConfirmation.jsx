@@ -1,6 +1,8 @@
 import React from "react";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
-const DetailConfirmation = () => {
+const DetailConfirmation = ({history, setStep, data}) => {
     return (
         <>
             <h3 className={'font-weight--bold'}>Almost there! Please have a look at all your information to confirm you are submitting the right information</h3>
@@ -9,8 +11,8 @@ const DetailConfirmation = () => {
                 <div style={{marginTop: '25px', marginLeft: '30px'}}>
                     <div className="single-trams">
                         <div className="title">
-                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option2" checked={true}/>
-                            <label className="form-check-label" htmlFor="inlineRadio2">Post graduate</label>
+                            <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option2" defaultChecked={true}/>
+                            <label className="form-check-label" htmlFor="inlineRadio2">{ data.graduate.split('_').join(' ')}</label>
                         </div>
                     </div>
                 </div>
@@ -30,12 +32,12 @@ const DetailConfirmation = () => {
                             <td>
                                 <div className="single-trams">
                                     <div className="title">
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3" checked={true}/>
-                                        <label className="form-check-label" htmlFor="inlineRadio3">May 21</label>
+                                        <input className="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3" defaultChecked={true}/>
+                                        <label className="form-check-label" htmlFor="inlineRadio3">{ data.start_date.split(',')[0]}</label>
                                     </div>
                                 </div>
                             </td>
-                            <td>2021-04-09</td>
+                            <td>{ data.start_date.split(',')[1]}</td>
                             <td><span className={'color-success'}>Open Now</span></td>
                         </tr>
                         </tbody>
@@ -50,26 +52,26 @@ const DetailConfirmation = () => {
                     <div className="row">
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Full Name</p>
-                            <p className={'font-weight--bold'}>John doe</p>
+                            <p className={'font-weight--bold'}>{data.name}</p>
                         </div>
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Username</p>
-                            <p className={'font-weight--bold'}>john_dove</p>
+                            <p className={'font-weight--bold'}>{data.username}</p>
                         </div>
                     </div>
                     <div className="row">
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Nationality</p>
-                            <p className={'font-weight--bold'}>Japan</p>
+                            <p className={'font-weight--bold'}>{data.nationality}</p>
                         </div>
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Phone Number</p>
-                            <p className={'font-weight--bold'}>09234274879823</p>
+                            <p className={'font-weight--bold'}>{data.phone}</p>
                         </div>
                     </div>
                     <div className="mb-3">
                         <p>Email address</p>
-                        <p className={'font-weight--bold'}>john@dov.com</p>
+                        <p className={'font-weight--bold'}>{data.email}</p>
                     </div>
                 </div>
 
@@ -78,24 +80,24 @@ const DetailConfirmation = () => {
                     <div className="row">
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Do you have a valid study permit/visa?</p>
-                            <p className={'font-weight--bold'}>No</p>
+                            <p className={'font-weight--bold'}>{data.permit}</p>
                         </div>
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Education country</p>
-                            <p className={'font-weight--bold'}>Australia</p>
+                            <p className={'font-weight--bold'}>{data.education_country}</p>
                         </div>
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Education level</p>
-                            <p className={'font-weight--bold'}>4 years bachelor degree</p>
+                            <p className={'font-weight--bold'}>{data.education_level}</p>
                         </div>
                         <div className="mb-3 col-lg-6 col-md-6 col-sm-12">
                             <p>Grading Scheme</p>
-                            <p className={'font-weight--bold'}>Relative</p>
+                            <p className={'font-weight--bold'}>{data.grading_scheme}</p>
                         </div>
 
                         <div className="mb-3 col-lg-12 col-md-12 col-sm-12">
                             <p>English Exam type</p>
-                            <p className={'font-weight--bold'}>TOFEL</p>
+                            <p className={'font-weight--bold'}>{data.english_exam_type}</p>
                         </div>
                     </div>
 
@@ -105,34 +107,34 @@ const DetailConfirmation = () => {
                             <div className="row mt-25">
                                 <p>Verbal</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gmat_verbal_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gmat_verbal_rank}%</span></p>
                                 </div>
 
                                 <p>Quantitative</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gmat_quantitative_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gmat_quantitative_score}%</span></p>
                                 </div>
 
                                 <p>Writing</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gmat_writing_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gmat_writing_score}%</span></p>
                                 </div>
 
                                 <p>Total</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gmat_total_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gmat_total_score}%</span></p>
                                 </div>
 
                             </div>
@@ -142,36 +144,53 @@ const DetailConfirmation = () => {
                             <div className="row mt-25">
                                 <p>Verbal</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gre_verbal_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gre_verbal_score}%</span></p>
                                 </div>
 
                                 <p>Quantitative</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gre_quantitative_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gre_quantitative_score}%</span></p>
                                 </div>
 
                                 <p>Writing</p>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Score: <span className={'font-weight--bold'}>70</span></p>
+                                    <p>Score: <span className={'font-weight--bold'}>{data.gre_writing_score}</span></p>
                                 </div>
                                 <div className="mb-3 col-lg-6 col-md-6 col-sm-6">
-                                    <p>Rank: <span className={'font-weight--bold'}>70%</span></p>
+                                    <p>Rank: <span className={'font-weight--bold'}>{data.gre_writing_score}%</span></p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div className={'col-lg-8 form--btn-wrapper mt-40'}>
+                    <button className={'btn btn-default  btn-medium btn-large'} onClick={() => history.goBack() }>Back</button>
+                    <button type='button' className={'btn btn-primary  btn-medium btn-large'} onClick={() => setStep('done')}>Submit</button>
                 </div>
             </form>
         </>
     )
 }
 
-export default DetailConfirmation;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        //load: (payload = undefined) => dispatch(loadPrograms(payload)),
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.users.user,
+    programs: state.programs.programs,
+    loading: state.programs.loading,
+    isLoggedIn: state.users.isLoggedIn,
+    error: state.programs.error
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(DetailConfirmation));

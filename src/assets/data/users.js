@@ -4,12 +4,40 @@ export default [
         name: 'Admin',
         username: 'admin',
         email: 'admin@admin.com',
-        password: 'admin'
+        password: 'admin',
+        middle_name: '',
+        last_name: '',
+        dob: '',
+        first_language: '',
+        country_of_citizenship: '',
+        passport_no: '',
+        gender: '',
+        marital_status: '',
+        address: '',
+        city: '',
+        country: '',
+        state: '',
+        zip_code: '',
+        phone: ''
     }, {
         id: 2,
         name: 'Admin2',
         username: 'admin2',
         email: 'admin2@admin.com',
-        password: 'admin2'
+        password: 'admin2',
+        middle_name: '',
+        last_name: '',
+        dob: '',
+        first_language: '',
+        country_of_citizenship: '',
+        passport_no: '',
+        gender: '',
+        marital_status: '',
+        address: '',
+        city: '',
+        country: '',
+        state: '',
+        zip_code: '',
+        phone: ''
     }
 ];

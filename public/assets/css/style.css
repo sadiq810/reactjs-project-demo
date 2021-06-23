@@ -10638,6 +10638,8 @@ input[type="checkbox"] {
 .program--box a {
   font-size: 9px;
   font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
 }
 
 .program--details {
@@ -10685,6 +10687,10 @@ input[type="checkbox"] {
 
   .marginToSmallScreen {
     margin-bottom: 37px;
+  }
+
+  .sort--drpdown {
+    margin-top: 20px;
   }
 }
 
@@ -10817,4 +10823,30 @@ table button {
 .multiple--radio--wrapper .form-check {
   display: inline-block;
   margin-right: 18px;
+}
+
+.user--avatar, .logout--icon {
+  background: #38524f;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.user--avatar i {
+  color: white;
+  font-size: 25px;
+  top: 7px;
+  left: 8px;
+  position: absolute;
+}
+
+.logout--icon i{
+  color: white;
+  font-size: 43px;
+  font-weight: 900;
+  top: 0px;
+  left: -8px;
+  position: absolute;
 }

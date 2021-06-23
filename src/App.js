@@ -13,6 +13,7 @@ import ProgramDetails from "./pages/ProgramDetails";
 import ApplyUniversity from "./pages/ApplyUniversity";
 import MyApplications from "./pages/MyApplications";
 import Profile from "./pages/Profile";
+import Programs from "./pages/Programs";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Header />
         <Switch>
           <Route path={'/'} exact={true}> <Home /></Route>
+          <Route path={'/programs'} exact={true}> <Programs /></Route>
           <Route path={'/member-benefit'} exact={true}> <MemberBenefit /></Route>
           <Route path={'/find-program'} exact={true}> <FindProgram /></Route>
           <Route path={'/program-detail/:id'} exact={true}> <ProgramDetails /></Route>

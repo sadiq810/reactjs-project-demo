@@ -15,6 +15,10 @@ const reducer = (state = {user: undefined, isLoggedIn: false, loading: false, is
             return { ...state, isRegistering: false, regError: action.payload, regMsg: '' };
         case 'USER_REGISTERED':
             return { ...state, userList: [...state.userList, action.payload.user], isRegistering: false, regError: '', regMsg: action.payload.message };
+        case 'USER_PROFILE_UPDATED':
+            return {...state, user: {...state.user, ...action.payload}};
+        case 'USER_LOGOUT':
+            return {...state, user: undefined, isLoggedIn: false}
         default:
             return state;
     }

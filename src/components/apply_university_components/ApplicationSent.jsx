@@ -15,7 +15,7 @@ const ApplicationSent = (props) => {
                             <div className="col-lg-6 col-md-6 col-sm-12 mt-40">
                                 <h3 className={'mb-30'}>Application Sent</h3>
                                 <p>You application has been sent. Please keep checking your application dashboard to see the status of ur application.</p>
-                                <button className={'btn btn-primary btn-large btn-medium'} onClick={() => props.history.push('/')}>DONE</button>
+                                <button className={'btn btn-primary btn-large btn-medium mt-40'} onClick={() => props.history.push('/')}>DONE</button>
                             </div>
                         </div>
                     </div>

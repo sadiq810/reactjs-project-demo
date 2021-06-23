@@ -12,7 +12,7 @@ let Login = (props) => {
 
     useEffect(() => {
         if (props.isLoggedIn) {
-            props.history.push('/');
+            props.history.push('/programs');
         }
     });
 

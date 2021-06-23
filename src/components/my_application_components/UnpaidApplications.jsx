@@ -1,6 +1,9 @@
 import React from "react";
+import {getUserUnPaidPrograms} from "../../redux/selectors/ProgramSelector";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
-const UnpaidApplications = () => {
+const UnpaidApplications = ({user_programs}) => {
     return (
         <>
             <h5 className={'font-weight-bold mb-30'}>Unpaid Applications</h5>
@@ -17,28 +20,40 @@ const UnpaidApplications = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>#2345</td>
-                    <td>Bachelor of Design - Environmental Design - Interior Design</td>
-                    <td>OCAD University</td>
-                    <td>September 2022</td>
-                    <td>September 2022</td>
-                    <td>$2556.00</td>
-                    <td><button className={'btn btn-primary btn-sm'}>Pay</button></td>
-                </tr>
-                <tr>
-                    <td>#11223</td>
-                    <td>Bachelor of Design - Environmental Design - Interior Design</td>
-                    <td>OCAD University</td>
-                    <td>September 2022</td>
-                    <td>September 2022</td>
-                    <td>$2556.00</td>
-                    <td><button className={'btn btn-primary btn-sm'}>Pay</button></td>
-                </tr>
+                {
+                    user_programs.map(p => {
+                        return (
+                            <tr>
+                                <td>#{p.id}</td>
+                                <td>{p.title}</td>
+                                <td>{p.university}</td>
+                                <td>{p.estart_date}</td>
+                                <td>{p.start_date}</td>
+                                <td>${p.fee.toLocaleString()}</td>
+                                <td><button className={'btn btn-primary btn-sm'}>Pay</button></td>
+                            </tr>
+                        )
+                    })
+                }
                 </tbody>
             </table>
         </>
     )
 }
 
-export default UnpaidApplications;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        //load: (payload = undefined) => dispatch(loadPrograms(payload)),
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.users.user,
+    programs: state.programs.programs,
+    user_programs: getUserUnPaidPrograms(state.programs.user_programs),
+    loading: state.programs.loading,
+    isLoggedIn: state.users.isLoggedIn,
+    error: state.programs.error
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(UnpaidApplications));

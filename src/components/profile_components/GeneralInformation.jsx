@@ -1,61 +1,67 @@
-import React from "react";
+import React, {useState} from "react";
+import {applyForProgram, updateUserProfile} from "../../redux/actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
+import TextBoxComponent from "../TextBoxComponent";
+import RadioComponent from "../RadioComponent";
 
-const GeneralInformation = () => {
+const GeneralInformation = ({save, user}) => {
+    const [info, setInfo] = useState({...user});
+
+    const setState = (field, value) => {
+        setInfo({...info, [field]: value});
+    }
+
+    const submit = (e) => {
+        e.preventDefault();
+        save(info);
+    };
+
     return (
         <>
             <h5 className={'font-weight-bold mb-2'}>Personal Information <span className={'font-weight--normal float-end profile--status'}>Not Complete <p>&nbsp;</p></span></h5>
             <p>(As included in your passport)</p>
             <div className="row mt-25">
-                <form action="#">
+                <form action="#" onSubmit={submit}>
                     <div className="row">
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="firstname" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="firstname"/>
+                            <TextBoxComponent setState={setState} label={'First Name'} value={info.name} field={'name'}/>
                         </div>
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="middlename" className="form-label">Middle Name</label>
-                            <input type="text" className="form-control" id="middlename"/>
+                            <TextBoxComponent setState={setState} label={'Middle Name'} value={info.middle_name} field={'middle_name'}/>
                         </div>
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="lastname" className="form-label">Last Name</label>
-                            <input type="text" className="form-control" id="lastname"/>
+                            <TextBoxComponent setState={setState} label={'Last Name'} value={info.last_name} field={'last_name'}/>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="dob" className="form-label">Date of Birth</label>
-                            <input type="text" className="form-control" id="dob"/>
+                            <TextBoxComponent setState={setState} label={'Date of Birth'} value={info.dob} field={'dob'}/>
                         </div>
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="first_language" className="form-label">First Language</label>
-                            <input type="text" className="form-control" id="first_language"/>
+                            <TextBoxComponent setState={setState} label={'First Language'} value={info.first_language} field={'first_language'}/>
                         </div>
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="citizenship" className="form-label">Country of Citizenship</label>
-                            <input type="text" className="form-control" id="citizenship"/>
+                            <TextBoxComponent setState={setState} label={'Country of Citizenship'} value={info.country_of_citizenship} field={'country_of_citizenship'}/>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                            <label htmlFor="passport_no" className="form-label">Passport Number</label>
-                            <input type="text" className="form-control" id="passport_no"/>
+                            <TextBoxComponent setState={setState} label={'Passport Number'} value={info.passport_no} field={'passport_no'}/>
                         </div>
                         <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
                             <label htmlFor="gender" className="form-label">Gender</label>
                             <div className={'multiple--radio--wrapper'}>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" defaultChecked={true}/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault1">Male</label>
+                                    <RadioComponent setState={setState} name={"gender"} field={'gender'} value={'male'} label={'Male'}/>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault2">Female</label>
+                                    <RadioComponent setState={setState} name={"gender"} field={'gender'} value={'female'} label={'Female'}/>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault3">X</label>
+                                    <RadioComponent setState={setState} name={"gender"} field={'gender'} value={'x'} label={'X'}/>
                                 </div>
                             </div>
                         </div>
@@ -63,20 +69,16 @@ const GeneralInformation = () => {
                             <label htmlFor="marital" className="form-label">Marital Status</label>
                             <div className={'multiple--radio--wrapper'}>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="marital_status" id="flexRadioDefault12"/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault12">Single</label>
+                                    <RadioComponent setState={setState} name={"marital_status"} field={'marital_status'} value={'single'} label={'Single'}/>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="marital_status" id="flexRadioDefault22" defaultChecked={true}/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault22">Married</label>
+                                    <RadioComponent setState={setState} name={"marital_status"} field={'marital_status'} value={'married'} label={'Married'}/>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="marital_status" id="flexRadioDefault32"/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault32">Divorced</label>
+                                    <RadioComponent setState={setState} name={"marital_status"} field={'marital_status'} value={'divorced'} label={'Divorced'}/>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="marital_status" id="flexRadioDefault42"/>
-                                    <label className="form-check-label" htmlFor="flexRadioDefault42">Separated</label>
+                                    <RadioComponent setState={setState} name={"marital_status"} field={'marital_status'} value={'separated'} label={'Separated'}/>
                                 </div>
                             </div>
                         </div>
@@ -86,40 +88,33 @@ const GeneralInformation = () => {
                     <div className={'ps-0 mt-25'}>
                         <div className="row">
                             <div className="mb-3 col-lg-8 col-md-8 col-sm-12">
-                                <label htmlFor="address" className="form-label">Address</label>
-                                <input type="text" className="form-control" id="address"/>
+                                <TextBoxComponent setState={setState} label={'Address'} value={info.address} field={'address'}/>
                             </div>
                             <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                                <label htmlFor="city_town" className="form-label">City/Town</label>
-                                <input type="text" className="form-control" id="city_town"/>
+                                <TextBoxComponent setState={setState} label={'City/Town'} value={info.city} field={'city'}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                                <label htmlFor="country" className="form-label">Country</label>
-                                <input type="text" className="form-control" id="country"/>
+                                <TextBoxComponent setState={setState} label={'Country'} value={info.country_of_citizenship} field={'country_of_citizenship'}/>
                             </div>
                             <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                                <label htmlFor="province_state" className="form-label">Province/State</label>
-                                <input type="text" className="form-control" id="province_state"/>
+                                <TextBoxComponent setState={setState} label={'Province/State'} value={info.state} field={'state'}/>
                             </div>
                             <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                                <label htmlFor="postal_zip_code" className="form-label">Postal/Zip code</label>
-                                <input type="text" className="form-control" id="postal_zip_code"/>
+                                <TextBoxComponent setState={setState} label={'Postal/Zip code'} value={info.zip_code} field={'zip_code'}/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                                <label htmlFor="email" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="email"/>
+                                <TextBoxComponent setState={setState} label={'Email address'} value={info.email} field={'email'}/>
                             </div>
                             <div className="mb-3 col-lg-4 col-md-4 col-sm-12">
-                                <label htmlFor="phone" className="form-label">Phone Number</label>
-                                <input type="text" className="form-control" id="phone"/>
+                                <TextBoxComponent setState={setState} label={'Phone Number'} value={info.phone} field={'phone'}/>
                             </div>
                         </div>
                         <div className="row mt-40">
-                            <button className={'btn btn-primary btn-large btn-medium m-auto'}>Next</button>
+                            <button type={'submit'} className={'btn btn-primary btn-large btn-medium m-auto'}>Next</button>
                         </div>
                     </div>
                 </form>
@@ -128,4 +123,16 @@ const GeneralInformation = () => {
     )
 }
 
-export default GeneralInformation;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        save: (payload) => dispatch(updateUserProfile(payload)),
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.users.user,
+    isLoggedIn: state.users.isLoggedIn,
+    error: state.users.error
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(GeneralInformation));
