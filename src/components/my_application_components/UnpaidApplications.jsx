@@ -3,7 +3,7 @@ import {getUserUnPaidPrograms} from "../../redux/selectors/ProgramSelector";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 
-const UnpaidApplications = ({user_programs}) => {
+const UnpaidApplications = ({user_programs, history}) => {
     return (
         <>
             <h5 className={'font-weight-bold mb-30'}>Unpaid Applications</h5>
@@ -23,14 +23,14 @@ const UnpaidApplications = ({user_programs}) => {
                 {
                     user_programs.map(p => {
                         return (
-                            <tr>
+                            <tr key={p.id}>
                                 <td>#{p.id}</td>
                                 <td>{p.title}</td>
                                 <td>{p.university}</td>
                                 <td>{p.estart_date}</td>
                                 <td>{p.start_date}</td>
                                 <td>${p.fee.toLocaleString()}</td>
-                                <td><button className={'btn btn-primary btn-sm'}>Pay</button></td>
+                                <td><button onClick={() => history.push('/payment-options/'+p.id)} className={'btn btn-primary btn-sm'}>Pay</button></td>
                             </tr>
                         )
                     })

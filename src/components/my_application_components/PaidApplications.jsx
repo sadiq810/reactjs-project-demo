@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link, withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import {getUserPaidPrograms} from "../../redux/selectors/ProgramSelector";
+import RequirementsComponent from "./RequirementsComponent";
 
 const PaidApplications = ({user_programs}) => {
+    const [program, setProgram] = useState('');
+
     return (
         <>
             <h5 className={'font-weight-bold mb-30'}>Paid Applications</h5>
@@ -23,13 +26,13 @@ const PaidApplications = ({user_programs}) => {
                 {
                     user_programs.map(p => {
                         return (
-                            <tr>
+                            <tr key={p.id}>
                                 <td>#{p.id}</td>
                                 <td>{p.title}</td>
                                 <td>{p.university}</td>
                                 <td>{p.estart_date}</td>
                                 <td>{p.start_date}</td>
-                                <td><a href={'#'}> View Requirements</a></td>
+                                <td><a href={'#'} onClick={() => setProgram(p)}> View Requirements</a></td>
                                 <td><span className={'text-success'}>{p.status}</span></td>
                             </tr>
                         )
@@ -37,6 +40,7 @@ const PaidApplications = ({user_programs}) => {
                 }
                 </tbody>
             </table>
+            <RequirementsComponent program={program} setProgram={setProgram}/>
         </>
     )
 }

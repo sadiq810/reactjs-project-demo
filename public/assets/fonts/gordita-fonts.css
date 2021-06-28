@@ -32,14 +32,14 @@
     font-family: 'Gordita';
     font-style: normal;
     font-weight: 500;
-    src: local('Gordita-regular'), 
+    src: local('Gordita-regular'),
          url('Gordita-regular.woff') format('woff');
 }
 @font-face {
     font-family: 'Gordita';
     font-style: italic;
     font-weight: 500;
-    src: local('Gordita Regular Italic'), 
+    src: local('Gordita Regular Italic'),
         url('Gordita-regular-italic.woff') format('woff');
 }
 

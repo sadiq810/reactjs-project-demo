@@ -15,10 +15,14 @@ body {
   font-style: normal;
   font-weight: 500;
   visibility: visible;
-  font-family: "Gordita";
-  color: #38524f;
+  font-family: "Gordita" !important;
+  color: #38524f !important;
   position: relative;
   background-color: #ffffff;
+}
+
+a:not(.btn){
+  color: #38524f !important;
 }
 
 body.no-overflow {
@@ -26,8 +30,8 @@ body.no-overflow {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #38524f;
-  font-family: "Gordita";
+  color: #38524f !important;
+  font-family: "Gordita" !important;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -10542,9 +10546,9 @@ input[type="checkbox"] {
   width: 148px;
 }
 .title__hr2 {
-  width: 60%;
-  top: -2px;
-  position: relative;
+  position: absolute;
+  width: 600px;
+  bottom: 1.5px;
 }
 
 .title__hr, .title__hr2 {
@@ -10810,14 +10814,18 @@ table button {
 
 .profile--status {
   font-size: 13px;
+  line-height: 18px;
 }
 
 .profile--status p {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background: #f48512;
   border-radius: 50%;
+}
+
+.status--warning {
+  background: #f48512;
 }
 
 .multiple--radio--wrapper .form-check {
@@ -10849,4 +10857,54 @@ table button {
   top: 0px;
   left: -8px;
   position: absolute;
+}
+
+.tabs--wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs--wrapper a {
+  padding-bottom: 6px;
+}
+
+.active--tab {
+  font-weight: bold;
+  border-bottom: 4px solid #38524f;
+}
+
+.may__application_active {
+  border-bottom: 4px solid #38524f;
+  padding-bottom: 4px;
+  font-weight: bold;
+}
+
+.payment--option {
+  border: 1px solid #38524f;
+  border-radius: 6px;
+  padding: 14px 37px;
+  cursor: pointer;
+}
+
+.payment--option i {
+  float: right;
+  margin-top: 1px;
+  font-size: 22px;
+}
+
+.wallet--option i {
+  float: left;
+  margin-right: 12px;
+  font-size: 30px;
+}
+
+.wallet--option p {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.back--link i {
+  font-size: 18px;
+  margin-right: 14px;
+  color: #38524f;
 }

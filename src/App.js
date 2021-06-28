@@ -14,6 +14,9 @@ import ApplyUniversity from "./pages/ApplyUniversity";
 import MyApplications from "./pages/MyApplications";
 import Profile from "./pages/Profile";
 import Programs from "./pages/Programs";
+import PaymentOption from "./pages/PaymentOption";
+import PaymentWithCreditCard from "./pages/PaymentWithCreditCard";
+import PaymentDone from "./pages/PaymentDone";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path={'/program-detail/:id'} exact={true}> <ProgramDetails /></Route>
           <Route path={'/apply-university/:id'} exact={true}> <ApplyUniversity /></Route>
           <Route path={'/my-applications'} exact={true}> <MyApplications /></Route>
+          <Route path={'/payment-options/:id'} exact={true}> <PaymentOption /></Route>
+          <Route path={'/payment-success'} exact={true}> <PaymentDone /></Route>
+          <Route path={'/pay-with-credit-card/:id'} exact={true}> <PaymentWithCreditCard /></Route>
           <Route path={'/my-profile'} exact={true}> <Profile /></Route>
           <Route path={'/about'} exact={true}> <About /></Route>
           <Route path={'/login'} exact={true}> <Login /></Route>

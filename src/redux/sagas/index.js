@@ -41,6 +41,14 @@ function* updateUserProfile({payload}) {
     yield put({type: 'USER_PROFILE_UPDATED', payload: payload})
 }
 
+function* updateUserEducationHistory({payload}) {
+    yield put({type: 'UPDATE_EDUCATION_HISTORY', payload: payload})
+}
+
+function* deleteUserEducationFromHistory({payload}) {
+    yield put({type: 'DELETE_EDUCATION', payload: payload})
+}
+
 function* logoutUser() {
     yield put({type: 'USER_LOGOUT', payload: undefined})
 }
@@ -65,14 +73,21 @@ function* applyForPrograms({payload: {program, data}}) { // data, program
         }})
 }
 
+function* paymentProcessing({payload}) { // data, program
+    yield put({type: 'PAYMENT_FOR_PROGRAM_DONE', payload})
+}
+
 function* actionWatcher() {
     yield takeLatest('AUTHENTICATING_USER', fetchUser);
     yield takeLatest('REGISTERING_USER', registerUser);
     yield takeLatest('UPDATE_USER_PROFILE', updateUserProfile);
+    yield takeLatest('UPDATE_USER_EDUCATION_HISTORY', updateUserEducationHistory);
+    yield takeLatest('DELETE_USER_EDUCATION_FROM_HISTORY', deleteUserEducationFromHistory);
     yield takeLatest('LOGOUT_USER', logoutUser);
 
     yield takeLatest('LOADING_PROGRAMS', loadPrograms);
     yield takeLatest('APPLY_FOR_PROGRAM', applyForPrograms);
+    yield takeLatest('PROCESS_PAYMENT', paymentProcessing);
 }
 
 export default function* rootSaga() {

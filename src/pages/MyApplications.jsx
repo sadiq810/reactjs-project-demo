@@ -12,11 +12,10 @@ const MyApplications = () => {
                     <div className="col-lg-12 col-md-12 col-sm-12">
                         <h2 className={'font-weight--bold mb-30'}>My Applications</h2>
                         <p className={'mb-0'}>
-                            <a href="#" onClick={() => setTab('unpaid')} style={tab == 'unpaid' ? {fontWeight: 'bold'}: {}}>Unpaid Application</a>
-                            <a href="#" onClick={() => setTab('paid')} style={{marginLeft: '40px', fontWeight: tab == 'paid' ? 'bold': 'normal'}}>Paid Application</a>
+                            <a href="#" onClick={() => setTab('unpaid')} className={tab == 'unpaid' ? 'may__application_active': ''}>Unpaid Application</a>
+                            <a href="#" onClick={() => setTab('paid')} className={tab == 'paid' ? 'may__application_active': ''} style={{marginLeft: '40px'}}>Paid Application</a>
                         </p>
-                        <div>
-                            <span className="title__hr" style={tab == 'paid' ? {width: '132px', marginLeft: '160px'} : {width: '138px'}}></span>
+                        <div className="position-relative">
                             <span className="title__hr2"></span>
                         </div>
                     </div>
