@@ -32,7 +32,7 @@ const PaidApplications = ({user_programs}) => {
                                 <td>{p.university}</td>
                                 <td>{p.estart_date}</td>
                                 <td>{p.start_date}</td>
-                                <td><a href={'#'} onClick={() => setProgram(p)}> View Requirements</a></td>
+                                <td><a href={'#'} onClick={() => setProgram(p)} data-bs-toggle="modal" data-bs-target="#exampleModal"> View Requirements</a></td>
                                 <td><span className={'text-success'}>{p.status}</span></td>
                             </tr>
                         )

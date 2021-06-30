@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         name: 'Admin',
@@ -41,7 +41,8 @@ export default [
         gre_writing_rank: '',
         is_visa_refused: '',
         visa_refused_reason: '',
-    }, {
+    },
+    {
         id: 2,
         name: 'Admin2',
         username: 'admin2',
@@ -85,3 +86,5 @@ export default [
         visa_refused_reason: '',
     }
 ];
+
+export default data;

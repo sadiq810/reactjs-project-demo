@@ -7,6 +7,13 @@
   src: url('../iCiel-fonts/ArialCE.ttf');
 }
 
+@font-face {
+  font-family: 'Gordita';
+  font-style: italic;
+  font-weight: 600;
+  src: url('../iCiel-fonts/ArialCEBold.ttf');
+}
+
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -22,7 +29,7 @@ body {
   font-style: normal;
   font-weight: 500;
   visibility: visible;
-  font-family: "Gordita" !important;
+  /*font-family: "Gordita" !important;*/
   color: #38524f !important;
   position: relative;
   background-color: #ffffff;
@@ -38,7 +45,7 @@ body.no-overflow {
 
 h1, h2, h3, h4, h5, h6 {
   color: #38524f !important;
-  font-family: "Gordita" !important;
+  /*font-family: "Gordita" !important;*/
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -3326,7 +3333,7 @@ input[type="checkbox"] {
   height: 100%;
   float: right;
   cursor: default;
-  background: #ffc4a0;
+  background: #e7e6e0;
   -webkit-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
   -o-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -10685,6 +10692,24 @@ input[type="checkbox"] {
     display: block;
     bottom: 0;
   }
+
+  .wallet--no {
+    top: 12px;
+  }
+
+  .wallet--footer {
+    margin-top: 60px;
+  }
+
+  .wallet--footer {
+    position: relative !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .margin--left {
+    margin-left: 15px;
+  }
 }
 @media (max-width: 780px) {
   .program--main-box {
@@ -10914,4 +10939,77 @@ table button {
   font-size: 18px;
   margin-right: 14px;
   color: #38524f;
+}
+
+.modal--close--btn {
+  float: left;
+  margin: 0 !important;
+  border: 2px solid #38524f;
+  border-radius: 50%;
+}
+
+.menu--active {
+  color: white !important;
+  background: #38524f;
+  padding: 10px 14px;
+  border-radius: 7px;
+}
+
+.wallet--card {
+  background: linear-gradient(125deg, #18413d 34%, #051c19 58%);
+  color: white !important;
+  border-radius: 15px;
+  padding: 23px;
+  height: 188px;
+  box-shadow: 5px 4px 13px 2px #38524f;
+}
+
+.wallet--card h3 {
+  color: white !important;
+  width: 140px;
+  display: inline-block;
+  float: left;
+}
+
+.wallet--card .wallet--info{
+  display: inline-block;
+  float: right;
+  text-align: end;
+}
+.wallet--card .wallet--info span {
+  display: block;
+}
+.wallet--card .wallet--info span:first-child {
+  font-size: 10px;
+  color: gray;
+}
+.wallet--card p:last-child {
+  bottom: 20px;
+}
+
+.gray--label {
+  color: #cdcdcd;
+}
+
+.font12 {
+  font-size: 12px;
+}
+
+.wallet--footer {
+  width: 100%;
+}
+
+.wallet--deposit-btn {
+  text-align: center;
+}
+.wallet--deposit-btn i, .wallet--deposit-btn p {
+  display: inline-block;
+  float: none !important;
+}
+.wallet--deposit-btn p {
+  margin-left: 10px;
+}
+
+table > thead th {
+  background: #e7e6e0 !important;
 }

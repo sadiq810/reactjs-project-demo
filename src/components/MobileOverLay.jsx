@@ -1,7 +1,11 @@
 import Logo from "./Logo";
 import Navigation from "./Navigation";
+import AuthNavigation from "./AuthNavigation";
+import {logoutUser} from "../redux/actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
-const MobileOerLay = () => {
+const MobileOerLay = (props) => {
     return (
         <div className="mobile-menu-overlay" id="mobile-menu-overlay">
             <div className="mobile-menu-overlay__inner">
@@ -22,7 +26,9 @@ const MobileOerLay = () => {
                 </div>
                 <div className="mobile-menu-overlay__body">
                     <nav className="offcanvas-navigation">
-                        <Navigation />
+                        {
+                            props.isLoggedIn ? (<AuthNavigation />) : (<Navigation />)
+                        }
                     </nav>
                 </div>
             </div>
@@ -30,4 +36,15 @@ const MobileOerLay = () => {
     );
 }
 
-export default MobileOerLay;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        //logout: () => dispatch(logoutUser()),
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.users.user,
+    isLoggedIn: state.users.isLoggedIn,
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MobileOerLay));
