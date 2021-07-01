@@ -1,6 +1,5 @@
 import { RangeSlider } from 'rsuite';
-import 'rsuite/lib/styles/index.less';
-import 'rsuite/dist/styles/rsuite-default.css';
+
 import React from "react";
 
 const RangeSliderComponent = ({field, setState, data}) => {

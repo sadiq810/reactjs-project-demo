@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         title: '3-D Animation and Game Design - BFA',
@@ -96,3 +96,5 @@ export default [
 
     }
 ];
+
+export default data;

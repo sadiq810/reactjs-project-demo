@@ -1,22 +1,22 @@
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
-const Navigation = () => {
+const Navigation = ({history}) => {
     return (
         <ul>
             <li>
-                <Link to="/"><span>Products</span></Link>
+                <Link to="/"><span className={history.location.pathname == '/' ? 'menu--active': ''}>Products</span></Link>
             </li>
             <li>
-                <Link to="/member-benefit"><span>Member Benifits</span></Link>
+                <Link to="/member-benefit"><span className={history.location.pathname == '/member-benefit' ? 'menu--active': ''}>Member Benifits</span></Link>
             </li>
             <li>
-                <Link to="/find-program"><span>Find Program</span></Link>
+                <Link to="/find-program"><span className={history.location.pathname == '/find-program' ? 'menu--active': ''}>Find Program</span></Link>
             </li>
             <li>
-                <Link to="/about"><span>About </span></Link>
+                <Link to="/about"><span className={history.location.pathname == '/about' ? 'menu--active': ''}>About </span></Link>
             </li>
         </ul>
     );
 }
 
-export default Navigation;
+export default withRouter(Navigation);
