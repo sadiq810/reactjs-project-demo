@@ -29,7 +29,7 @@ const Programs = (props) => {
             <div className="container-fluid mWidth95percent mb-30">
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12">
-                        <h2 className={'font-weight--bold mb-30'}>Programs</h2>
+                        <h2 className={'h2 font-weight--bold mb-30'}>Programs</h2>
                         <p className={'mb-0'}>Programs</p>
                         <div className={'position-relative'}><span className="title__hr"></span><span className="title__hr2"></span></div>
                     </div>
