@@ -10,7 +10,7 @@ let Program = ({p, index, history, match}) => {
                     <p className={'font-weight--bold'}>Logo</p>
                 </div>
                 <div className={'super1 col-lg-12 col-sm-12 col-md-12 program--type'}>
-                    <p className={' font-weight--light'}>Program type</p>
+                    <p className={' font-weight--normal'}>Program type</p>
                     <p className={' font-weight--bold'}>{ p.type }</p>
                 </div>
             </div>
@@ -18,15 +18,15 @@ let Program = ({p, index, history, match}) => {
                 <div className="row">
                     <div className=" col-lg-12 col-sm-12 col-md-12">
                         <h6 className={'font-weight--bold'}>{ p.title}</h6>
-                        <p className={'super2 font-weight--light'}>{p.university.title}, {p.university.location}</p>
+                        <p className={'super2 font-weight--normal'}>{p.university.title}, {p.university.location}</p>
                     </div>
                     <div className=" col-lg-6 col-sm-6 col-md-6 program--duration">
-                        <p className="khan font-weight--light">Duration</p>
+                        <p className="khan font-weight--normal">Duration</p>
                         <p className={'khan font-weight--bold'}>{p.duration} Years</p>
                     </div>
                     <div className="col-lg-6 col-sm-6 col-md-6 program--annual-tuition">
-                        <p className=" font-weight--light">Annual tuition fee</p>
-                        <p className={'font-weight--bold'}>{p.tuition_fee} USD</p>
+                        <p className=" font-weight--normal">Annual tuition fee</p>
+                        <p className={'font-weight--bold'}>{p.tuition_fee.toLocaleString()} USD</p>
                     </div>
                 </div>
             </div>

@@ -37,7 +37,7 @@ const WalletComponent = ({user, history}) => {
                             <div className="row payment--option" onClick={() => history.push('/payment-options/credit-wallet')}>
                                 <div className="wallet--deposit-btn">
                                     <i className="icofont-wallet"></i>
-                                    <p className={'font-weight--bold'}>DEPOSIT</p>
+                                    <p className={''}>DEPOSIT</p>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ const WalletComponent = ({user, history}) => {
                             <div className="row payment--option" >
                                 <div className="wallet--deposit-btn">
                                     <i className="icofont-wallet"></i>
-                                    <p className={'font-weight--bold'}>WITHDRAW</p>
+                                    <p className={''}>WITHDRAW</p>
                                 </div>
                             </div>
                         </div>

@@ -28,7 +28,7 @@ const PaymentOption = ({history, match}) => {
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-6 wallet--option">
                                             <i className="icofont-wallet"></i>
-                                            <p className={'font-weight--bold'}>Wallet</p>
+                                            <p className={''}>Wallet</p>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 mt-1">
                                             <p>3-5 days <i className={'icofont-curved-right'}></i></p>
@@ -40,7 +40,7 @@ const PaymentOption = ({history, match}) => {
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-6 wallet--option">
                                             <i className="icofont-mobile-phone"></i>
-                                            <p className={'font-weight--bold'}>Mobile Money</p>
+                                            <p className={''}>Mobile Money</p>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 mt-1">
                                             <p>Instant 24/7 <i className={'icofont-curved-right'}></i></p>
@@ -52,7 +52,7 @@ const PaymentOption = ({history, match}) => {
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-6 wallet--option">
                                             <i className="icofont-bank"></i>
-                                            <p className={'font-weight--bold'}>Bank Transfer</p>
+                                            <p className={''}>Bank Transfer</p>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 mt-1">
                                             <p>3-5 days <i className={'icofont-curved-right'}></i></p>
@@ -60,7 +60,7 @@ const PaymentOption = ({history, match}) => {
                                     </div>
                                 </div>
                                 <div className="row text-center mt-40 back--link">
-                                    <Link to={'/my-applications'}><i className={'icofont-curved-left font-weight--bold'}></i>Back</Link>
+                                    <Link to={'/my-applications'}><i className={'icofont-curved-left '}></i>Back</Link>
                                 </div>
                             </div>
                         </div>

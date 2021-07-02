@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import { Donut } from 'react-dial-knob'
@@ -6,6 +6,11 @@ import { Donut } from 'react-dial-knob'
 const ActiveLoansComponent = ({user, history}) => {
     const [value, setValue] = useState(69);
     const [values, setValues] = useState(15);
+
+    useEffect(() => {
+        window.fixDonutChart();
+    });
+
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -76,8 +81,6 @@ const ActiveLoansComponent = ({user, history}) => {
         </div>
     )
 }
-
-window.fixDonutChart();
 
 const mapDispatchToProps = (dispatch) => {
     return {

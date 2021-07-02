@@ -7,7 +7,7 @@
 }
 
 .super1 {
-  margin-top: 19px;
+  margin-top: 15px;
   margin-bottom: 2rem;
 }
 .super2 {
@@ -11099,7 +11099,7 @@ input[type="checkbox"] {
 .program--type {
   padding-top: 48px;
   margin-right: -9rem;
-  margin-top: 7px;
+  /*margin-top: 7px;*/
 }
 
 .program--duration p,

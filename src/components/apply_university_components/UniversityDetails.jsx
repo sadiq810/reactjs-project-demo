@@ -10,7 +10,7 @@ const UniversityDetails = ({setStep, history, setState, data}) => {
     }
     return (
         <>
-            <h3 className={'font-weight--bold'}>University Details</h3>
+            <h3 className={'font-weight--bold mb-4'}>University Details</h3>
             <p>We just need a few details so we can help you at every step of your application, and check for scholarships you won't find on university websites.</p>
 
             <h4>What level of program are you interested in?</h4>

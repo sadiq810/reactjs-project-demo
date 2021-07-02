@@ -59,19 +59,25 @@
           var childs = donut.find('div>div>div>div');
           var last =  childs.last();
           var text = last.text();
-          var html = `<div>${text}%</div><div style="font-size: 17px; font-weight: 500;">Paid Off</div>`;
-          last.css('top', '40px');
-          last.html(html);
-        }, 1000);
+
+          if (!text.includes('Paid')) {
+            var html = `<div>${text}%</div><div style="font-size: 17px; font-weight: 500;">Paid Off</div>`;
+            last.css('top', '40px');
+            last.html(html);
+          }
+        }, 100);
+
         setTimeout(function() {
-          var donut = $('body').find('.donut2');
-          var childs = donut.find('div>div>div>div');
-          var last =  childs.last();
-          var text = last.text();
-          var html = `<div>${text}%</div><div style="font-size: 17px; font-weight: 500;">Paid Off</div>`;
-          last.css('top', '40px');
-          last.html(html);
-        }, 1000);
+          var donut2 = $('body').find('.donut2');
+          var childs2 = donut2.find('div>div>div>div');
+          var last2 =  childs2.last();
+          var text2 = last2.text();
+          if (!text2.includes('Paid')) {
+            var html2 = `<div>${text2}%</div><div style="font-size: 17px; font-weight: 500;">Paid Off</div>`;
+            last2.css('top', '40px');
+            last2.html(html2);
+          }
+        }, 100);
       }
     </script>
   </body>

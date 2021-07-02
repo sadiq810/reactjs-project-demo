@@ -35,7 +35,7 @@ const ProgramDetails = ({match, programs, history}) => {
                         <div className="col-lg-5 bg-white p-4 rounded">
                             <h3 className={'font-weight--bold'}>Program Facts</h3>
                             <p className={'mb-0'}>{p.university.title}</p>
-                            <span className={'font-weight--light'}>{p.university.location}</span>
+                            <span className={'font-weight--normal'}>{p.university.location}</span>
                             <div className="row">
                                 <div className="col-lg-5 col-md-5 col-sm-5 bg-gray position-relative facts--wrapper">
                                     <div className={'d-inline-block facts--marker'}>&nbsp;</div>
