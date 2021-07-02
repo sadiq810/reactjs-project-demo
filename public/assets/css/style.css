@@ -11483,3 +11483,7 @@ table > thead th {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.chart--detail--wrapper h3 {
+  font-size: 20px !important;
+}

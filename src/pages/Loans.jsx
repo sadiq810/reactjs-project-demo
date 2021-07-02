@@ -29,7 +29,7 @@ const Loans = () => {
                             <a href="#" className={tab == 'Active Loans' ? 'active--tab': ''} onClick={() => setTab('Active Loans')}>Active Loans</a>
                             <a href="#" className={tab == 'Loan Applications' ? 'active--tab': ''} onClick={() => setTab('Loan Applications')}>Applications</a>
                             <a href="#" className={tab == 'Drafts' ? 'active--tab': ''} onClick={() => setTab('Drafts')}>Drafts</a>
-                            <a href="#" className={'float-end'}><span className="menu--active">Apply</span></a>
+                            <a href="#" className={'float-end btn btn-medium btn-primary'} style={{width: '160px'}}>Apply Now</a>
                         </p>
                         <div>
                             <span className="title__hr2"></span>

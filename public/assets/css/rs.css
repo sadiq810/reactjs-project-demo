@@ -51,16 +51,7 @@ sub {
 .hidden {
     display: none !important;
 }
-.fade {
-    opacity: 0;
-    -webkit-transition: opacity 0.15s linear;
-    transition: opacity 0.15s linear;
-    pointer-events: none;
-}
-.fade.in {
-    opacity: 1;
-    pointer-events: unset;
-}
+
 .collapse {
     display: none;
 }
