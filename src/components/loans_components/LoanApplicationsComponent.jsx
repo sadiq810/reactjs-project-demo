@@ -1,9 +1,9 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {loadWalletPayments} from "../../redux/actions";
+import {loadLoansApplications} from "../../redux/actions";
 
-const PaymentsHistory = ({payments = [], fetched, load}) => {
+const LoanApplicationsComponent = ({loans = [], fetched, load}) => {
     useEffect(() => {
         if (!fetched)
             load();
@@ -15,30 +15,29 @@ const PaymentsHistory = ({payments = [], fetched, load}) => {
                 <div className="container pt-5 pb-5">
                     <div className="col-lg-12 col-md-12 col-sm-12 program--main-box">
                         <div className="row program--wrapper">
-                            <h5 className={'font-weight-bold mb-30'}>Payments History</h5>
+                            <h5 className={'font-weight-bold mb-30'}>Applications</h5>
                             <table className={'table'}>
                                 <thead className="table-light">
                                 <tr>
-                                    <th>Order ID</th>
-                                    <th>Date</th>
-                                    <th>Items</th>
+                                    <th>App #</th>
+                                    <th>Loan name</th>
                                     <th>Amount</th>
-                                    <th>Method</th>
-                                    <th>Credit Balance</th>
+                                    <th>Interest Rate</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {
-                                    payments.map(p => {
+                                    loans.map(p => {
                                         return (
                                             <tr key={p.id}>
                                                 <td>#{p.id}</td>
-                                                <td>{p.date}</td>
                                                 <td>{p.title}</td>
                                                 <td>${p.amount.toFixed(2).toLocaleString()}</td>
-                                                <td>{p.method}</td>
-                                                <td>${p.amount.toFixed(2).toLocaleString()}</td>
-                                                {/*<td><button onClick={() => history.push('/payment-options/'+p.id)} className={'btn btn-primary btn-sm'}>Pay</button></td>*/}
+                                                <td>{p.interest_rate}%</td>
+                                                <td style={{color: p.status == 'Approved' ? 'green': 'yellow'}}>{p.status}</td>
+                                                <td><a href={'#'}>View Application</a></td>
                                             </tr>
                                         )
                                     })
@@ -55,19 +54,14 @@ const PaymentsHistory = ({payments = [], fetched, load}) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        load: () => dispatch(loadWalletPayments()),
+        load: () => dispatch(loadLoansApplications()),
     }
 }
 
 const mapStateToProps = (state) => ({
     user: state.users.user,
-    payments: state.payments.payment_history,
-    fetched: state.payments.paymentsFetched,
-    //  programs: state.programs.programs,
-  //  user_programs: getUserUnPaidPrograms(state.programs.user_programs),
-  //  loading: state.programs.loading,
- //   isLoggedIn: state.users.isLoggedIn,
-   // error: state.programs.error
+    loans: state.loans.applications,
+    fetched: state.loans.fetched
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PaymentsHistory));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoanApplicationsComponent));

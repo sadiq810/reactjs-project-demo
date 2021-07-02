@@ -1,6 +1,6 @@
-const data = [
+let data = [
     {
-        date: '15-06-2021',
+        date: '2021-06-15',
         items: [
             {
                 id: '234643',
@@ -23,7 +23,7 @@ const data = [
         ]
     },
     {
-        date: '16-06-2021',
+        date: '2021-06-16',
         items: [
             {
                 id: '756645',

@@ -6,6 +6,7 @@ import rootSaga from '.././sagas';
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import PaymentReducer from "../reducers/PaymentReducer";
+import LoanReducer from "../reducers/LoanReducer";
 
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -20,7 +21,8 @@ export default () => {
     const persistedReducer = persistReducer(persistConfig, combineReducers({
         users: UserReducer,
         programs: ProgramsReducer,
-        payments: PaymentReducer
+        payments: PaymentReducer,
+        loans: LoanReducer
     }));
 
     let store = createStore(persistedReducer,

@@ -1,5 +1,9 @@
 import { put, takeLatest, all, takeEvery  } from 'redux-saga/effects';
 import programs from "../../assets/data/programs";
+import transactions_history from "../../assets/data/transactions_history";
+import payments_history from "../../assets/data/payments_history";
+import loan_application from "../../assets/data/loan_application";
+import loan_application_draft from "../../assets/data/loan_application_draft";
 
 function* fetchUser({payload}) {
    /* const json = yield fetch('https://newsapi.org/v1/articles?source= cnn&apiKey=c39a26d9c12f48dba2a5c00e35684ecc')
@@ -77,6 +81,40 @@ function* paymentProcessing({payload}) { // data, program
     yield put({type: 'PAYMENT_FOR_PROGRAM_DONE', payload})
 }
 
+function* loadTransactionsList({payload}) {
+    let tsh = [...JSON.parse(JSON.stringify(transactions_history))];
+
+    if (payload.apply) {
+        tsh.forEach(th => {
+            if (payload.method)
+                th.items = th.items.filter(t => t.description == payload.method);
+            if (payload.status)
+                th.items = th.items.filter(t => t.action == payload.status);
+            if (payload.type)
+                th.items = th.items.filter(t => t.payment_type == payload.type);
+
+        })
+    }
+
+    yield put({type: 'TRANSACTIONS_LOADING'});
+    yield put({type: 'TRANSACTIONS_LOADED', payload: tsh});
+}
+
+function* loadWalletPaymentList() {
+    yield put({type: 'PAYMENTS_HISTORY_LOADED', payload: payments_history});
+}
+
+function* loadLoansApplicationList() {
+    yield put({type: 'LOADING_LOANS_APPLICATIONS'});
+    yield put({type: 'LOANS_APPLICATIONS_LOADED', payload: loan_application});
+}
+
+
+function* loadLoansDraftApplicationList() {
+    yield put({type: 'LOADING_LOANS_DRAFT_APPLICATIONS'});
+    yield put({type: 'LOANS_DRAFT_APPLICATIONS_LOADED', payload: loan_application_draft});
+}
+
 function* actionWatcher() {
     yield takeLatest('AUTHENTICATING_USER', fetchUser);
     yield takeLatest('REGISTERING_USER', registerUser);
@@ -88,6 +126,12 @@ function* actionWatcher() {
     yield takeLatest('LOADING_PROGRAMS', loadPrograms);
     yield takeLatest('APPLY_FOR_PROGRAM', applyForPrograms);
     yield takeLatest('PROCESS_PAYMENT', paymentProcessing);
+
+    yield takeLatest('LOAD_TRANSACTIONS', loadTransactionsList);
+    yield takeLatest('LOAD_WALLET_PAYMENTS', loadWalletPaymentList);
+
+    yield takeLatest('LOAD_LOANS_APPLICATIONS', loadLoansApplicationList);
+    yield takeLatest('LOAD_LOANS_DRAFT_APPLICATIONS', loadLoansDraftApplicationList);
 }
 
 export default function* rootSaga() {

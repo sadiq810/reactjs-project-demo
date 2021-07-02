@@ -52,5 +52,27 @@
     <script src="%PUBLIC_URL%/assets/js/plugins/plugins.min.js"></script>
     <!-- Main JS -->
     <script src="%PUBLIC_URL%/assets/js/main.js"></script>
+    <script>
+      function fixDonutChart() {
+        setTimeout(function() {
+          var donut = $('body').find('.donut');
+          var childs = donut.find('div>div>div>div');
+          var last =  childs.last();
+          var text = last.text();
+          var html = `<div>${text}%</div><div style="font-size: 17px; font-weight: 500;">Paid Off</div>`;
+          last.css('top', '40px');
+          last.html(html);
+        }, 1000);
+        setTimeout(function() {
+          var donut = $('body').find('.donut2');
+          var childs = donut.find('div>div>div>div');
+          var last =  childs.last();
+          var text = last.text();
+          var html = `<div>${text}%</div><div style="font-size: 17px; font-weight: 500;">Paid Off</div>`;
+          last.css('top', '40px');
+          last.html(html);
+        }, 1000);
+      }
+    </script>
   </body>
 </html>

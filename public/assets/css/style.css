@@ -11013,3 +11013,37 @@ table button {
 table > thead th {
   background: #e7e6e0 !important;
 }
+
+.donut, .donut2 {
+  width: 200px;
+  float: right;
+}
+
+.chart--detail--wrapper {
+  width: 47%;
+}
+
+.chart--detail--wrapper .heading {
+  background: rgb(231, 230, 224);
+  max-width: 140px;
+  padding: 2px 15px;
+  border-radius: 8px;
+}
+
+.chart--detail--wrapper p, .chart--detail--wrapper h3 {
+  padding-left: 15px;
+}
+
+.chart--container {
+  border-radius: 15px;
+  box-shadow: 5px 4px 17px 0px #b7bcbc;
+}
+
+.chart--container .card-body {
+  padding: 2rem !important;
+}
+
+.chart--container .card-body>h4 {
+  text-decoration: underline;
+  font-weight: bold;
+}

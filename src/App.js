@@ -18,6 +18,7 @@ import PaymentOption from "./pages/PaymentOption";
 import PaymentWithCreditCard from "./pages/PaymentWithCreditCard";
 import PaymentDone from "./pages/PaymentDone";
 import Payments from "./pages/Payments";
+import Loans from "./pages/Loans";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path={'/payment-success'} exact={true}> <PaymentDone /></Route>
           <Route path={'/pay-with-credit-card/:id'} exact={true}> <PaymentWithCreditCard /></Route>
           <Route path={'/payments'} exact={true}> <Payments /></Route>
+          <Route path={'/loans'} exact={true}> <Loans /></Route>
           <Route path={'/my-profile'} exact={true}> <Profile /></Route>
           <Route path={'/about'} exact={true}> <About /></Route>
           <Route path={'/login'} exact={true}> <Login /></Route>
