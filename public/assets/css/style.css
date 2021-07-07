@@ -11487,3 +11487,82 @@ table > thead th {
 .chart--detail--wrapper h3 {
   font-size: 20px !important;
 }
+
+.header--title {
+  max-width: 60% !important;
+}
+.header--title--btn {
+  max-width: 40% !important;
+}
+
+.loan--box {
+  padding: 14px;
+  margin: auto;
+  cursor: pointer;
+}
+.loan--box p{
+  margin: 0;
+}
+.loan--box i{
+  color: white;
+}
+
+.loan--box p:nth-child(2) {
+  font-size: 10px;
+}
+
+.active--loan-box {
+  background: #38524f;
+  color: white;
+}
+.active--loan-box p:nth-child(2){
+  color: #e6e0e0;
+}
+
+.loan--sub-menu {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.loan--sub-menu li {
+  margin-bottom: 16px;
+}
+
+.loan--sub-menu li div.selected {
+  background: #041f1c;
+  color: white;
+  max-width: 165px;
+  padding: 3px 12px;
+  padding-bottom: 7px;
+  border-top-right-radius: 69px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 29px;
+  border-top-left-radius: 29px;
+}
+.loan--sub-menu li i {
+  margin-right: 8px;
+}
+
+
+
+.loan--sub-menu li div.selected:after,
+.loan--sub-menu li div.selected:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+
+  border-left: 20px solid green;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  z-index: 2;
+}
+.loan--sub-menu li div.selected:before {
+  border-top: 21px solid transparent;
+  border-bottom: 21px solid transparent;
+  border-left: 21px solid black;
+  top: -1px;
+  right: -21px;
+}

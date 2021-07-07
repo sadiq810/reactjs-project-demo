@@ -2,9 +2,10 @@ import React, {useState} from "react";
 import LoanApplicationsComponent from "../components/loans_components/LoanApplicationsComponent";
 import DraftsComponent from "../components/loans_components/DraftsComponent";
 import ActiveLoansComponent from "../components/loans_components/ActiveLoansComponent";
+import {Link, withRouter} from "react-router-dom";
 
-const Loans = () => {
-    let [tab, setTab] = useState('Active Loans');
+const Loans = ({history}) => {
+    let [tab, setTab] = useState((history.location.search && history.location.search.includes('draft')) ? 'Drafts' : 'Active Loans');
 
     const getComponent = () => {
         switch (tab) {
@@ -29,7 +30,7 @@ const Loans = () => {
                             <a href="#" className={tab == 'Active Loans' ? 'active--tab': ''} onClick={() => setTab('Active Loans')}>Active Loans</a>
                             <a href="#" className={tab == 'Loan Applications' ? 'active--tab': ''} onClick={() => setTab('Loan Applications')}>Applications</a>
                             <a href="#" className={tab == 'Drafts' ? 'active--tab': ''} onClick={() => setTab('Drafts')}>Drafts</a>
-                            <a href="#" className={'float-end btn btn-medium btn-primary'} style={{width: '160px'}}>Apply Now</a>
+                            <Link to={'/apply-for-loan'} className={'float-end btn btn-medium btn-primary'} style={{width: '160px'}}>Apply Now</Link>
                         </p>
                         <div>
                             <span className="title__hr2"></span>
@@ -47,4 +48,4 @@ const Loans = () => {
     )
 }
 
-export default Loans;
+export default withRouter(Loans);
