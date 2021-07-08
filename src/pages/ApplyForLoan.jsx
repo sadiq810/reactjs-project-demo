@@ -8,7 +8,7 @@ import EmploymentComponent from "../components/apply_loan_components/EmploymentC
 import YourRateComponent from "../components/apply_loan_components/YourRateComponent";
 
 const ApplyForLoan = () => {
-    let [tab, setTab] = useState('residence');
+    let [tab, setTab] = useState('your_rate');
 
     const getComponent = () => {
         switch (tab) {

@@ -2209,6 +2209,7 @@ progress {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
+  height: 4rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
