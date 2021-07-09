@@ -10,9 +10,7 @@
   border-radius: 6px;
   font-size:13px ;
 }
-.span6{
 
-}
 .address1{
 width: 43%;
   margin-top: 12px;
@@ -43,6 +41,18 @@ width: 94%;
   font-weight: 700;
   font-size: 24px;
 
+}
+.btn40{
+  float: right;
+  border-top-left-radius: 0rem !important;
+  border-bottom-left-radius: 3px !important;
+}
+.btn41{
+  border-top-right-radius: 0rem !important;
+  border-bottom-right-radius: 3px !important;
+  float: right;
+  background-color:#38524f !important;
+color: white;
 }
 .btn4{
   color: #38524f;
@@ -81,7 +91,6 @@ width: 94%;
   margin-left: 15px;
   border-radius: 6px;
   font-size:14px ;
-  height: 23rem;
 }
 .last1 {
 font-size:21px ;
@@ -111,6 +120,104 @@ font-weight: 400 !important;
 }
 .para{
   font-weight: 400;
+  font-size: 21px;
+}
+.para34{
+  font-weight: 400;
+  font-size: 17px;
+}
+.form-control2{
+  width: 83%;
+  height: fit-content;
+  margin-top: -6px;
+  margin-bottom: 2rem;
+}
+.button12{
+  background-color: #38524f !important;
+  color: white;
+  width: 8rem;
+  font-size: 12px;
+  margin-left: 12rem;
+  margin-top: -4rem;
+}
+.program3{
+  margin-left: -9rem !important;
+  margin-bottom: -28px;
+}
+.program4{
+  margin-left: -9rem !important;
+  margin-top: 30px;
+  margin-bottom: -29px;
+}
+.date9{
+
+}
+.program9{
+  margin-left: 29rem;
+  margin-top: -50px;
+}
+.date1{
+  font-size: 21px;
+  opacity: 50%;
+  margin-left: -7px;
+  margin-right: 22px;
+}.date4{
+   font-size: 21px;
+   margin-left: -7px;
+   margin-right: 17px;
+   width: 36%;
+}.date5{
+  font-size: 21px;
+  margin-left: -7px;
+  margin-right: 22px;
+}.date6{
+  font-size: 21px;
+     margin-left: -7px;
+  margin-right: 22px;
+}
+.date2{
+  font-size: 21px;
+  opacity: 50%;
+  margin-left: -7px;
+  margin-right: 22px;
+}
+.date3{
+  font-size: 21px;
+  margin-left: -7px;
+  margin-right: 22px;
+}
+.program1{
+  margin-top:62px !important;
+
+}
+.form3{
+  margin-left: -30px;
+  width: 76% !important
+}
+.form1{
+  margin-left: -72px;
+}
+.form-control3{
+  width: 90%;
+  height: fit-content;
+  margin-top: -6px;
+}
+.hori1{
+  height: 6px !important;
+  color: #38524f;
+  opacity: 100%;
+  margin-top: 24px;
+}
+.king2{
+margin-left:41rem ;
+  margin-top: -173px;
+}
+.king1{
+margin-left:41rem ;
+  margin-top: -41px;
+}
+.para31{
+  font-weight: 600;
   font-size: 21px;
 }
 .simple{
@@ -150,6 +257,16 @@ font-weight: 400 !important;
   border-left: 2px solid #e9e8e3;
   height: auto;
   font-size: 21px;
+}
+.a1{
+  text-decoration: underline;
+}
+.vl2{
+  margin-left: 6rem;
+  font-weight: 800;
+  border-left: 2px solid #e9e8e3;
+  height: auto;
+  font-size: 22px;
 }
 .vl span{
   font-size: 12px;
@@ -11202,6 +11319,19 @@ input[type="checkbox"] {
   overflow: auto;
 }
 
+.noor{
+  max-width: 72%;
+  border-radius: 5px;
+  overflow: auto;
+  margin-left: 22rem;
+  margin-top: -12rem;
+}
+.noor2{
+
+  max-width: 72%;
+  border-radius: 5px;
+  margin-left: 22rem;
+}
 .program--legend {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -11256,7 +11386,7 @@ input[type="checkbox"] {
 .program--annual-tuition p,
 .program--type p {
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .program--main-box {
@@ -11379,7 +11509,7 @@ input[type="checkbox"] {
 
 .program--description,
 .apply--form {
-  padding: 45px;
+  padding: 21px;
   overflow: hidden;
 }
 

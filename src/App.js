@@ -20,6 +20,7 @@ import PaymentDone from "./pages/PaymentDone";
 import Payments from "./pages/Payments";
 import Loans from "./pages/Loans";
 import ApplyForLoan from "./pages/ApplyForLoan";
+import UniversityDetail from "./pages/UniversityDetail";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path={'/member-benefit'} exact={true}> <MemberBenefit /></Route>
           <Route path={'/find-program'} exact={true}> <FindProgram /></Route>
           <Route path={'/program-detail/:id'} exact={true}> <ProgramDetails /></Route>
+          <Route path={'/university-detail/:id'} exact={true}> <UniversityDetail/></Route>
           <Route path={'/apply-university/:id'} exact={true}> <ApplyUniversity /></Route>
           <Route path={'/my-applications'} exact={true}> <MyApplications /></Route>
           <Route path={'/payment-options/:id'} exact={true}> <PaymentOption /></Route>
