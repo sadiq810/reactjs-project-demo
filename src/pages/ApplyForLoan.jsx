@@ -9,26 +9,34 @@ import YourRateComponent from "../components/apply_loan_components/YourRateCompo
 import LoanApplicationDone from "../components/apply_loan_components/LoanApplicationDone";
 
 const ApplyForLoan = () => {
-    let [tab, setTab] = useState('loan_info');
+    let [tab, setTab] = useState('types');
+    let [loan, setLoan] = useState({type: '', sub_type: '', goal: '', loan_refinancing: '', rate_checking_today: '', loan_amount: '', dob: '', phone: '',
+    street: '', apartment: '', city: '', state: '', zipcode: '', living_status: '', degree: '',
+    graduate_school: '', graduate_program: '', graduate_date: '',undergraduate_school: '', undergraduate_program: '', undergraduate_date: '',
+    employment_status: '', is_other_income: '', annual_income: '', rate_checking: ''});
+
+    const setState = (field, value) => {
+        setLoan({...loan, [field]: value})
+    }
 
     const getComponent = () => {
         switch (tab) {
             case 'types':
-                return <LoanTypesComponent setTab={setTab}/>;
+                return <LoanTypesComponent setTab={setTab} setState={setState} loan={loan}/>;
             case 'loan_info':
-                return <LoanInfoComponent setTab={setTab}/>;
+                return <LoanInfoComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>;
             case 'about_you':
-                return <AboutYouComponent setTab={setTab}/>
+                return <AboutYouComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
             case 'residence':
-                return <ResidenceComponent setTab={setTab}/>
+                return <ResidenceComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
             case 'education':
-                return <EducationComponent setTab={setTab}/>
+                return <EducationComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
             case 'employment':
-                return <EmploymentComponent setTab={setTab}/>
+                return <EmploymentComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
             case 'your_rate':
-                return <YourRateComponent setTab={setTab}/>
+                return <YourRateComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
             case 'done':
-                return <LoanApplicationDone setTab={setTab}/>
+                return <LoanApplicationDone setTab={setTab} setState={setState}/>
             default:
                 return 'Please select a tab.';
         }

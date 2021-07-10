@@ -85,7 +85,7 @@ color: white;
   color: #38524f;
   margin-top: 20px;
   width: 42%;
-  height: 5rem !important;
+  min-height: 5rem !important;
   border: 1px solid lightgray;
   background: transparent !important;
   margin-left: 15px;
@@ -362,6 +362,32 @@ h1 {
   h1 {
     font-size: 34px;
   }
+
+  .loan--right-sidebar {
+    display: none;
+  }
+  .donut, .donut2 {
+    float: none !important;
+    margin: auto;
+  }
+  .header--title, .header--title--btn {
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+  .address1, .address2 {
+    width: 100%;
+  }
+  .address2 {
+    margin-left: 0;
+  }
+
+  .btn--mobile {
+    width: 126px !important;
+  }
+
+  .program--wrapper {
+    margin-bottom: 20px;
+  }
 }
 
 h2 {
@@ -377,6 +403,10 @@ h2 {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   h2 {
     font-size: 30px;
+  }
+
+  .loan--right-sidebar {
+    display: none;
   }
 }
 
@@ -11769,10 +11799,10 @@ table > thead th {
 }
 
 .header--title {
-  max-width: 60% !important;
+  max-width: 60%;
 }
 .header--title--btn {
-  max-width: 40% !important;
+  max-width: 40% ;
 }
 
 .loan--box {
@@ -11811,7 +11841,7 @@ table > thead th {
 .loan--sub-menu li div.selected {
   background: #041f1c;
   color: white;
-  max-width: 165px;
+  max-width: 175px;
   padding: 3px 12px;
   padding-bottom: 7px;
   border-top-right-radius: 69px;
@@ -11845,4 +11875,20 @@ table > thead th {
   border-left: 21px solid black;
   top: -1px;
   right: -21px;
+}
+
+.loan--type i {
+  color: white;
+}
+.loan--type .selected, .emp--status .selected {
+  background: #041f1c !important;
+  color: white;
+}
+
+.emp--status {
+  cursor: pointer;
+}
+
+.btn4--override {
+  width: auto !important;
 }

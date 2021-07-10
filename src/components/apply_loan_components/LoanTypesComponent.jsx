@@ -2,8 +2,9 @@ import React from "react";
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
 import LoanTypeComponent from "./components/LoanTypeComponent";
+import {educationalLoanTypes, personalLoanTypes} from "../../redux/selectors/LoanSelector";
 
-const LoanTypesComponent = ({user, history, setTab}) => {
+const LoanTypesComponent = ({setTab, types, setState, loan}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -17,21 +18,22 @@ const LoanTypesComponent = ({user, history, setTab}) => {
                         <h3 className={'mt-40'}>Educational Loans</h3>
                     </div>
                     <div className="row mt-30">
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={true}/>
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
+                        {
+                            educationalLoanTypes(types).map(t => {
+                                return (<LoanTypeComponent id={t.id} title={t.title} description={t.detail} selected={t.id == loan.type} setState={setState} key={t.id} setTab={setTab}/>)
+                            })
+                        }
                     </div>
-
 
                     <div className="row mt-40">
                         <h3 className={'mt-40'}>Personal and Home Loans</h3>
                     </div>
                     <div className="row mt-30">
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
-                        <LoanTypeComponent title={'Student Loan Refinance'} description={'Variable rates as low as 2.25% APR with autopay'} selected={false}/>
+                        {
+                            personalLoanTypes(types).map(t => {
+                                return (<LoanTypeComponent id={t.id} title={t.title} description={t.detail} selected={t.id == loan.type} setState={setState} key={t.id} setTab={setTab}/>)
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -40,15 +42,11 @@ const LoanTypesComponent = ({user, history, setTab}) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+    return {}
 }
 
 const mapStateToProps = (state) => ({
-    user: state.users.user,
-    isLoggedIn: state.users.isLoggedIn,
-    error: state.users.error
+    types: state.loans.loan_types
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoanTypesComponent));

@@ -1,5 +1,4 @@
 import {sortBy} from 'lodash';
-import programs from "../../assets/data/programs";
 
 export const filterPrograms = (programs, title = '', location = '', sort = 'asc', applyFilter, filters) => {
     let p = [...programs];

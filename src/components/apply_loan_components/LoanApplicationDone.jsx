@@ -1,6 +1,6 @@
 import React from "react";
 import {withRouter} from 'react-router-dom';
-import Icon from '../../assets/images/Mail sent-rafiki@2x.png'
+import Icon from '../../assets/images/Group 1072@2x.png'
 
 const LoanApplicationDone = (props) => {
     return (
@@ -13,9 +13,9 @@ const LoanApplicationDone = (props) => {
                                 <img src={Icon} alt=""/>
                             </div>
                             <div className="col-lg-6 col-md-6 col-sm-12 mt-40">
-                                <h3 className={'mb-30'}>Application Sent</h3>
-                                <p>You application has been sent. Please keep checking your application dashboard to see the status of ur application.</p>
-                                <button className={'btn btn-primary btn-large btn-medium mt-40'} onClick={() => props.history.push('/')}>DONE</button>
+                                <h3 className={'mb-30'}>Loan Application Sent</h3>
+                                <p>Your loan application has been submitted. Please keep checking on the status of your loan request for any new updates.</p>
+                                <button className={'btn btn-primary btn-large btn-medium mt-40'} onClick={() => props.history.push('/loans')}>DONE</button>
                             </div>
                         </div>
                     </div>

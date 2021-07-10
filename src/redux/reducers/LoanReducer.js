@@ -1,4 +1,6 @@
-const PaymentReducer = (state = {applications: [], draft_applications: [], isLoading: false, fetched: false, isLoadingDraft: false, draftFetched: false}, action) => {
+import {types} from "../../assets/data/loan_details";
+
+const PaymentReducer = (state = {applications: [], draft_applications: [], isLoading: false, fetched: false, isLoadingDraft: false, draftFetched: false, loan_types: types}, action) => {
     switch (action.type) {
         case 'LOADING_LOANS_APPLICATIONS':
             return {...state, isLoading: true};
