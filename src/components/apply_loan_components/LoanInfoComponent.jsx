@@ -1,9 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
-import LoanTypeComponent from "./components/LoanTypeComponent";
+import SidebarComponent from "./components/SidebarComponent";
+import LoanInfoSidebarComponent from "./components/LoanInfoSidebarComponent";
 
-const LoanInfoComponent = ({user, history}) => {
+const LoanInfoComponent = ({user, history, setTab}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -13,18 +14,7 @@ const LoanInfoComponent = ({user, history}) => {
                     </div>
                     <div className="row mt-40">
                         <div className="col-lg-3 col-md-3">
-                            <ul className={'loan--sub-menu'}>
-                                <li className={'position-relative'}>
-                                    <div className={'selected'}>
-                                        <i className="icofont-disc"></i>Loan Info
-                                    </div>
-                                </li>
-                                <li><i className="icofont-check-circled"></i>About you</li>
-                                <li><i className={'icofont-check-circled'}></i>Residence</li>
-                                <li>Education</li>
-                                <li>Employment</li>
-                                <li>Your rates</li>
-                            </ul>
+                            <SidebarComponent />
                         </div>
                         <div className="simple2 col-lg-6 col-md-3">
                             <label>Select which loan would<br/> you like to apply for</label>
@@ -117,17 +107,10 @@ const LoanInfoComponent = ({user, history}) => {
                                        placeholder="Enter Amount">
                                 </input>
                                 </div>
-
                             </div>
+                        </div>
 
-
-
-                            </div>
-<div className="col-lg-3 col-md-3 vl">
-    <p className="for-me">Refinance For Me</p><br/>
-    <span>2.25% - 6.43% Variable APR with autoplay</span><br/>
-    <span>2.99% - 6.88% Fixed APR with autoplay</span>
-</div>
+                        <LoanInfoSidebarComponent />
                     </div>
 
                 </div>

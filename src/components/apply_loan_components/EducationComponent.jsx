@@ -1,8 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
+import SidebarComponent from "./components/SidebarComponent";
+import LoanInfoSidebarComponent from "./components/LoanInfoSidebarComponent";
 
-const EducationComponent = ({user, history}) => {
+const EducationComponent = ({user, history, setTab}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -12,18 +14,7 @@ const EducationComponent = ({user, history}) => {
                     </div>
                     <div className="row mt-40">
                         <div className="col-lg-3 col-md-3">
-                            <ul className={'loan--sub-menu'}>
-                                <li className={'position-relative'}>
-                                    <div className={'selected'}>
-                                        <i className="icofont-disc"></i>Loan Info
-                                    </div>
-                                </li>
-                                <li><i className="icofont-check-circled"></i>About you</li>
-                                <li><i className={'icofont-check-circled'}></i>Residence</li>
-                                <li>Education</li>
-                                <li>Employment</li>
-                                <li>Your rates</li>
-                            </ul>
+                            <SidebarComponent />
                         </div>
                         <div className="col-lg-6 col-md-3">
                             <h3 className="hh3">Next, let's talk about your education.</h3>
@@ -49,52 +40,21 @@ const EducationComponent = ({user, history}) => {
 
                             </div>
                             <div className="row">
-                                <input type="address" className="form-control col-lg-4 address5" id="exampleFormControlInput1"
-                                       placeholder="Graduate school">
-                                </input>
-
-                                <input type="address" className="form-control col-lg-4 address1" id="exampleFormControlInput1"
-                                       placeholder="Graduate program">
-                                </input>
-                                <input type="address" className="form-control col-lg-4 address2" id="exampleFormControlInput1"
-                                       placeholder="Graduation date">
-                                </input>
-
+                                <input type="address" className="form-control col-lg-4 address5" placeholder="Graduate school"/>
+                                <input type="address" className="form-control col-lg-4 address1" placeholder="Graduate program"/>
+                                <input type="address" className="form-control col-lg-4 address2" placeholder="Graduation date"/>
                             </div>
-
 
                             <div className="col-lg-12 col-md-3 simple">
                                 <label>What are the details of your undergraduate degree?</label>
-
                             </div>
                             <div className="row">
-                                <input type="address" className="form-control col-lg-4 address5" id="exampleFormControlInput1"
-                                       placeholder="Undergraduate school">
-                                </input>
-
-                                <input type="address" className="form-control col-lg-4 address1" id="exampleFormControlInput1"
-                                       placeholder="Undergraduate program">
-                                </input>
-                                <input type="address" className="form-control col-lg-4 address2" id="exampleFormControlInput1"
-                                       placeholder="Graduation date">
-                                </input>
-
+                                <input type="address" className="form-control col-lg-4 address5" placeholder="Undergraduate school"/>
+                                <input type="address" className="form-control col-lg-4 address1" placeholder="Undergraduate program"/>
+                                <input type="address" className="form-control col-lg-4 address2" placeholder="Graduation date"/>
                             </div>
-
-
-
-
-
-
                         </div>
-
-
-
-                        <div className="col-lg-3 col-md-3 vl">
-                            <p className="for-me">Refinance For Me</p><br/>
-                            <span>2.25% - 6.43% Variable APR with autoplay</span><br/>
-                            <span>2.99% - 6.88% Fixed APR with autoplay</span>
-                        </div>
+                        <LoanInfoSidebarComponent />
                     </div>
                 </div>
             </div>

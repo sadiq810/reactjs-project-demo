@@ -1,8 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
+import SidebarComponent from "./components/SidebarComponent";
+import LoanInfoSidebarComponent from "./components/LoanInfoSidebarComponent";
 
-const EmploymentComponent = ({user, history}) => {
+const EmploymentComponent = ({user, history, setTab}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -12,18 +14,7 @@ const EmploymentComponent = ({user, history}) => {
                     </div>
                     <div className="row mt-40">
                         <div className="col-lg-3 col-md-3">
-                            <ul className={'loan--sub-menu'}>
-                                <li className={'position-relative'}>
-                                    <div className={'selected'}>
-                                        <i className="icofont-disc"></i>Loan Info
-                                    </div>
-                                </li>
-                                <li><i className="icofont-check-circled"></i>About you</li>
-                                <li><i className={'icofont-check-circled'}></i>Residence</li>
-                                <li>Education</li>
-                                <li>Employment</li>
-                                <li>Your rates</li>
-                            </ul>
+                            <SidebarComponent />
                         </div>
 
                         <div className="col-lg-6 col-md-3">
@@ -68,32 +59,13 @@ const EmploymentComponent = ({user, history}) => {
                                 <p className="para">
                                     This information will be subject to verification.
                                 </p>
-                                <input type="address" className="form-control col-lg-4 address5" id="exampleFormControlInput1"
-                                       placeholder="Annual income.....">
-                                </input>
+                                <input type="address" className="form-control col-lg-4 address5" id="exampleFormControlInput1" placeholder="Annual income....."/>
                                 <p className="para">
                                     Alimony, child support, or separate maintenance income doesn't need to be revealed if you don't wish to have it considered as a basis for repaying this obligation.
-
                                 </p>
                             </div>
-
-
-
                         </div>
-
-
-
-
-
-
-
-
-
-                        <div className="col-lg-3 col-md-3 vl">
-                            <p className="for-me">Refinance For Me</p><br/>
-                            <span>2.25% - 6.43% Variable APR with autoplay</span><br/>
-                            <span>2.99% - 6.88% Fixed APR with autoplay</span>
-                        </div>
+                        <LoanInfoSidebarComponent />
                     </div>
                 </div>
             </div>

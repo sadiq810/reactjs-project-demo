@@ -1,8 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
+import SidebarComponent from "./components/SidebarComponent";
+import LoanInfoSidebarComponent from "./components/LoanInfoSidebarComponent";
 
-const AboutYouComponent = ({user, history}) => {
+const AboutYouComponent = ({user, history, setTab}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -12,18 +14,7 @@ const AboutYouComponent = ({user, history}) => {
                     </div>
                     <div className="row mt-40">
                         <div className="col-lg-3 col-md-3">
-                            <ul className={'loan--sub-menu'}>
-                                <li className={'position-relative'}>
-                                    <div className={'selected'}>
-                                        <i className="icofont-disc"></i>Loan Info
-                                    </div>
-                                </li>
-                                <li><i className="icofont-check-circled"></i>About you</li>
-                                <li><i className={'icofont-check-circled'}></i>Residence</li>
-                                <li>Education</li>
-                                <li>Employment</li>
-                                <li>Your rates</li>
-                            </ul>
+                            <SidebarComponent />
                         </div>
                         <div className="col-lg-6 col-md-3">
                             <h3 className="hh3">Now, let's learn more about you.</h3>
@@ -48,23 +39,7 @@ const AboutYouComponent = ({user, history}) => {
                             </div>
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-                        <div className="col-lg-3 col-md-3 vl">
-                            <p className="for-me">Refinance For Me</p><br/>
-                            <span>2.25% - 6.43% Variable APR with autoplay</span><br/>
-                            <span>2.99% - 6.88% Fixed APR with autoplay</span>
-                        </div>
-
-
+                        <LoanInfoSidebarComponent />
                     </div>
                 </div>
             </div>

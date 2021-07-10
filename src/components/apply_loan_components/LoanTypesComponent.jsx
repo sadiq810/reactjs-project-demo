@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {Link, withRouter} from "react-router-dom";
 import LoanTypeComponent from "./components/LoanTypeComponent";
 
-const LoanTypesComponent = ({user, history}) => {
+const LoanTypesComponent = ({user, history, setTab}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
