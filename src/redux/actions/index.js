@@ -16,3 +16,5 @@ export const loadWalletPayments = (payload) => ({type: 'LOAD_WALLET_PAYMENTS', p
 
 export const loadLoansApplications = (payload) => ({type: 'LOAD_LOANS_APPLICATIONS', payload});
 export const loadLoansDraftApplications = (payload) => ({type: 'LOAD_LOANS_DRAFT_APPLICATIONS', payload});
+
+export const submitLoanApplication = (payload) => ({type: 'SUBMIT_LOAN_APPLICATION', payload});

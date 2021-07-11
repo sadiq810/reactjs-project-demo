@@ -36,3 +36,7 @@ export const getUserPaidPrograms = (programs) => {
 export const getUserUnPaidPrograms = (programs) => {
     return programs.filter(p => p.status == 'unpaid')
 };
+
+export const getUniversity = (universities) => {
+    return universities[0];
+}

@@ -26,7 +26,7 @@ const LoanInfoComponent = ({user, history, setTab, loan, types, setState, tab}) 
                                 {
                                     selectedLoan.sub_types.map((t, k) => {
                                         return (
-                                            <button className={"btn btn1 btn4--override col-lg-4 col-md-6 col-sm-12"+(loan.sub_type == t ? 'selected': '')} key={k} onClick={() => setState('sub_type', t)}>{t}
+                                            <button className={"btn btn1 btn4--override col-lg-4 col-md-6 col-sm-12 "+(loan.sub_type == t ? 'selected': '')} key={k} onClick={() => setState('sub_type', t)}>{t}
                                                 <span>
                                                     <i className="icofont-check-circled soon"></i>
                                                 </span>
@@ -42,7 +42,7 @@ const LoanInfoComponent = ({user, history, setTab, loan, types, setState, tab}) 
                                     {
                                         loanGoals.map((lg, idx) => {
                                             return (
-                                                <button className={"btn btn1 btn4--override col-lg-4 col-md-6 col-sm-12"+(loan.goal == lg ? 'selected': '')} key={idx} onClick={() => setState('goal', lg)}>{lg}
+                                                <button className={"btn btn1 btn4--override col-lg-4 col-md-6 col-sm-12 "+(loan.goal == lg ? 'selected': '')} key={idx} onClick={() => setState('goal', lg)}>{lg}
                                                     <span>
                                                         <i className="icofont-check-circled soon"></i>
                                                     </span>
@@ -84,11 +84,11 @@ const LoanInfoComponent = ({user, history, setTab, loan, types, setState, tab}) 
                                 </p>
                             </div>
                             <div className="row loan--type">
-                                <div className={"btn3 btn4--override col-lg-3 col-md-6 col-sm-12"+(loan.rate_checking_today == 'link_current_loan' ? 'selected': '')} onClick={() => setState('rate_checking_today', 'link_current_loan')}>
+                                <div className={"btn3 btn4--override col-lg-3 col-md-6 col-sm-12 "+(loan.rate_checking_today == 'link_current_loan' ? 'selected': '')} onClick={() => setState('rate_checking_today', 'link_current_loan')}>
                                     Link my current loans
                                     <article>Speed up the process and make sure nothing is missed.</article>
                                 </div>
-                                <div className={"btn3 btn4--override col-lg-3  col-md-6 col-sm-12"+(loan.rate_checking_today == 'enter_information_manually' ? 'selected': '')} onClick={() => setState('rate_checking_today', 'enter_information_manually')}>
+                                <div className={"btn3 btn4--override col-lg-3  col-md-6 col-sm-12 "+(loan.rate_checking_today == 'enter_information_manually' ? 'selected': '')} onClick={() => setState('rate_checking_today', 'enter_information_manually')}>
                                     <span className="span1">Enter my information manually</span>
                                     <article>Speed uo the process and make sure nothing is missed.</article>
                                 </div>
@@ -100,7 +100,7 @@ const LoanInfoComponent = ({user, history, setTab, loan, types, setState, tab}) 
                                     The amount you are refinancing must be greater than or equal to $500.
                                 </p>
                                 <div className="mb-3">
-                                    <input type="email" className="form-control" placeholder="Enter Amount" value={loan.loan_amount} onChange={e => setState('loan_amount', e.target.value)}/>
+                                    <input type="email" className="form-control" placeholder="Enter Amount" value={loan.amount} onChange={e => setState('amount', e.target.value)}/>
                                 </div>
                             </div>
                             <div className={'col-lg-12 col-md-12 col-sm-12 form--btn-wrapper mt-40 simple2 '}>

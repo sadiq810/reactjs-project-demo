@@ -7,17 +7,28 @@ import EducationComponent from "../components/apply_loan_components/EducationCom
 import EmploymentComponent from "../components/apply_loan_components/EmploymentComponent";
 import YourRateComponent from "../components/apply_loan_components/YourRateComponent";
 import LoanApplicationDone from "../components/apply_loan_components/LoanApplicationDone";
+import {submitLoanApplication} from "../redux/actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
-const ApplyForLoan = () => {
-    let [tab, setTab] = useState('types');
-    let [loan, setLoan] = useState({type: '', sub_type: '', goal: '', loan_refinancing: '', rate_checking_today: '', loan_amount: '', dob: '', phone: '',
+let defaultState = {type: '', sub_type: '', goal: '', loan_refinancing: '', rate_checking_today: '', amount: '', dob: '', phone: '',
     street: '', apartment: '', city: '', state: '', zipcode: '', living_status: '', degree: '',
     graduate_school: '', graduate_program: '', graduate_date: '',undergraduate_school: '', undergraduate_program: '', undergraduate_date: '',
-    employment_status: '', is_other_income: '', annual_income: '', rate_checking: ''});
+    employment_status: '', is_other_income: '', annual_income: '', rate_checking: ''};
+
+
+const ApplyForLoan = ({save}) => {
+    let [tab, setTab] = useState('types');
+    let [loan, setLoan] = useState({...defaultState});
 
     const setState = (field, value) => {
         setLoan({...loan, [field]: value})
     }
+
+    const submit = () => {
+        save({...loan});
+        setLoan({...defaultState});
+    };
 
     const getComponent = () => {
         switch (tab) {
@@ -34,7 +45,7 @@ const ApplyForLoan = () => {
             case 'employment':
                 return <EmploymentComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
             case 'your_rate':
-                return <YourRateComponent tab={tab} setTab={setTab} setState={setState} loan={loan}/>
+                return <YourRateComponent tab={tab} setTab={setTab} setState={setState} submit={submit} loan={loan}/>
             case 'done':
                 return <LoanApplicationDone setTab={setTab} setState={setState}/>
             default:
@@ -53,4 +64,14 @@ const ApplyForLoan = () => {
     )
 }
 
-export default ApplyForLoan;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        save: (payload) => dispatch(submitLoanApplication(payload)),
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.users.user,
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ApplyForLoan));

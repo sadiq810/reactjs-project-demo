@@ -10,6 +10,8 @@ const PaymentReducer = (state = {applications: [], draft_applications: [], isLoa
             return {...state, isLoadingDraft: true};
         case 'LOANS_DRAFT_APPLICATIONS_LOADED':
             return {...state, isLoadingDraft: false, draftFetched: true, draft_applications: action.payload};
+        case 'LOAN_APPLICATION_SUBMITTED':
+            return {...state, applications: [...state.applications, {...action.payload}]};
         default:
             return state;
     }

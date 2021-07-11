@@ -4,6 +4,8 @@ import transactions_history from "../../assets/data/transactions_history";
 import payments_history from "../../assets/data/payments_history";
 import loan_application from "../../assets/data/loan_application";
 import loan_application_draft from "../../assets/data/loan_application_draft";
+import {getLoanTypeById} from "../selectors/LoanSelector";
+import {types} from "../../assets/data/loan_details";
 
 function* fetchUser({payload}) {
    /* const json = yield fetch('https://newsapi.org/v1/articles?source= cnn&apiKey=c39a26d9c12f48dba2a5c00e35684ecc')
@@ -115,6 +117,18 @@ function* loadLoansDraftApplicationList() {
     yield put({type: 'LOANS_DRAFT_APPLICATIONS_LOADED', payload: loan_application_draft});
 }
 
+function* submitLoanApplication({payload}) {
+    let loan = getLoanTypeById(payload.type, types)
+    let response = {
+        id: Math.floor(Math.random()*23948),
+        title: loan.title,
+        interest_rate: 5.9,
+        status: 'Pending'
+    };
+
+    yield put({type: 'LOAN_APPLICATION_SUBMITTED', payload: {...payload, ...response}});
+}
+
 function* actionWatcher() {
     yield takeLatest('AUTHENTICATING_USER', fetchUser);
     yield takeLatest('REGISTERING_USER', registerUser);
@@ -132,6 +146,8 @@ function* actionWatcher() {
 
     yield takeLatest('LOAD_LOANS_APPLICATIONS', loadLoansApplicationList);
     yield takeLatest('LOAD_LOANS_DRAFT_APPLICATIONS', loadLoansDraftApplicationList);
+
+    yield takeLatest('SUBMIT_LOAN_APPLICATION', submitLoanApplication);
 }
 
 export default function* rootSaga() {

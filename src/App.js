@@ -21,6 +21,7 @@ import Payments from "./pages/Payments";
 import Loans from "./pages/Loans";
 import ApplyForLoan from "./pages/ApplyForLoan";
 import UniversityDetail from "./pages/UniversityDetail";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -35,14 +36,22 @@ function App() {
           <Route path={'/program-detail/:id'} exact={true}> <ProgramDetails /></Route>
           <Route path={'/university-detail/:id'} exact={true}> <UniversityDetail/></Route>
           <Route path={'/apply-university/:id'} exact={true}> <ApplyUniversity /></Route>
-          <Route path={'/my-applications'} exact={true}> <MyApplications /></Route>
-          <Route path={'/payment-options/:id'} exact={true}> <PaymentOption /></Route>
-          <Route path={'/payment-success'} exact={true}> <PaymentDone /></Route>
-          <Route path={'/pay-with-credit-card/:id'} exact={true}> <PaymentWithCreditCard /></Route>
-          <Route path={'/payments'} exact={true}> <Payments /></Route>
-          <Route path={'/loans'} exact={true}> <Loans /></Route>
-          <Route path={'/apply-for-loan/:id?'} exact={true}> <ApplyForLoan /></Route>
-          <Route path={'/my-profile'} exact={true}> <Profile /></Route>
+          {/*<Route path={'/my-applications'} exact={true}> <MyApplications /></Route>*/}
+          {/*<Route path={'/payment-options/:id'} exact={true}> <PaymentOption /></Route>*/}
+          {/*<Route path={'/payment-success'} exact={true}> <PaymentDone /></Route>*/}
+          {/*<Route path={'/pay-with-credit-card/:id'} exact={true}> <PaymentWithCreditCard /></Route>*/}
+          <PrivateRoute  exact={true} path={'/my-applications'} component={MyApplications} />
+          <PrivateRoute  exact={true} path={'/payment-options/:id'} component={PaymentOption} />
+          <PrivateRoute  exact={true} path={'/payment-success'} component={PaymentDone} />
+          <PrivateRoute  exact={true} path={'/pay-with-credit-card/:id'} component={PaymentWithCreditCard} />
+          <PrivateRoute  exact={true} path={'/payments'} component={Payments} />
+          <PrivateRoute  exact={true} path={'/loans'} component={Loans} />
+          <PrivateRoute  exact={true} path={'/apply-for-loan/:id?'} component={ApplyForLoan} />
+          <PrivateRoute  exact={true} path={'/my-profile'} component={Profile} />
+          {/*<Route path={'/payments'} exact={true}> <Payments /></Route>*/}
+          {/*<Route path={'/loans'} exact={true}> <Loans /></Route>*/}
+          {/*<Route path={'/apply-for-loan/:id?'} exact={true}> <ApplyForLoan /></Route>*/}
+          {/*<Route path={'/my-profile'} exact={true}> <Profile /></Route>*/}
           <Route path={'/about'} exact={true}> <About /></Route>
           <Route path={'/login'} exact={true}> <Login /></Route>
           <Route path={'/register'} exact={true}> <Register /></Route>

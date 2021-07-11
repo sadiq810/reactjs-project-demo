@@ -34,7 +34,7 @@ const LoanApplicationsComponent = ({loans = [], fetched, load}) => {
                                             <tr key={p.id}>
                                                 <td>#{p.id}</td>
                                                 <td>{p.title}</td>
-                                                <td>${p.amount.toFixed(2).toLocaleString()}</td>
+                                                <td>${parseInt(p.amount).toFixed(2).toLocaleString()}</td>
                                                 <td>{p.interest_rate}%</td>
                                                 <td style={{color: p.status == 'Approved' ? 'green': 'yellow'}}>{p.status}</td>
                                                 <td><a href={'#'}>View Application</a></td>

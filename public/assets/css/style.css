@@ -127,10 +127,7 @@ font-weight: 400 !important;
   font-size: 17px;
 }
 .form-control2{
-  width: 83%;
   height: fit-content;
-  margin-top: -6px;
-  margin-bottom: 2rem;
 }
 .button12{
   background-color: #38524f !important;
@@ -191,16 +188,14 @@ font-weight: 400 !important;
 
 }
 .form3{
-  margin-left: -30px;
+  /*margin-left: -30px;*/
   width: 76% !important
 }
 .form1{
   margin-left: -72px;
 }
 .form-control3{
-  width: 90%;
   height: fit-content;
-  margin-top: -6px;
 }
 .hori1{
   height: 6px !important;
@@ -251,6 +246,7 @@ margin-left:41rem ;
 .super1 {
   margin-top: 15px;
   margin-bottom: 2rem;
+  margin-left: 30px;
 }
 .vl {
   font-weight: 700;
@@ -258,11 +254,9 @@ margin-left:41rem ;
   height: auto;
   font-size: 21px;
 }
-.a1{
-  text-decoration: underline;
-}
+
 .vl2{
-  margin-left: 6rem;
+ /* margin-left: 6rem;*/
   font-weight: 800;
   border-left: 2px solid #e9e8e3;
   height: auto;
@@ -387,6 +381,9 @@ h1 {
 
   .program--wrapper {
     margin-bottom: 20px;
+  }
+  .program--box a {
+    margin: auto !important;
   }
 }
 
@@ -11341,6 +11338,7 @@ input[type="checkbox"] {
   color: darkgray !important;
   font-size: 14px;
   margin-left: 10px;
+  left: 107px;
 }
 
 .mWidth95percent {
@@ -11444,6 +11442,23 @@ input[type="checkbox"] {
 
   .wallet--footer {
     position: relative !important;
+  }
+  .form1, .form3 {
+    margin-left: unset;
+    width: 100% !important;
+  }
+
+  .program3 {
+    margin: auto;
+    margin-left: auto !important;
+  }
+
+  .program4 {
+    margin-left: auto !important;
+  }
+
+  .super1 {
+    margin: auto !important;
   }
 }
 
@@ -11891,4 +11906,18 @@ table > thead th {
 
 .btn4--override {
   width: auto !important;
+}
+
+.university--component {
+  border-radius: 12px;
+  padding: 12px 27px;
+}
+
+.university--tabs-wrapper p {
+  padding: 2px 12px;
+  cursor: pointer;
+}
+.university--tabs-wrapper .selected {
+  background: white;
+  border-radius: 12px;
 }

@@ -4,7 +4,7 @@ import {Link, withRouter} from "react-router-dom";
 import SidebarComponent from "./components/SidebarComponent";
 import LoanInfoSidebarComponent from "./components/LoanInfoSidebarComponent";
 
-const YourRateComponent = ({setTab, setState, loan, tab}) => {
+const YourRateComponent = ({setTab, setState, loan, tab, submit}) => {
     return (
         <div className="container-fluid mWidth95percent bg-white">
             <div className="container pt-5 pb-5">
@@ -47,7 +47,7 @@ const YourRateComponent = ({setTab, setState, loan, tab}) => {
                             </div>
                             <div className={'col-lg-12 col-md-12 col-sm-12 form--btn-wrapper mt-40 simple2'}>
                                 <a className={'float-start'} onClick={() => setTab('employment') }><i className="icofont-curved-left"></i>Back</a>
-                                <button type='button' className={'btn btn-primary  btn-medium btn-large float-end btn--mobile'} onClick={() => setTab('done')}>Submit</button>
+                                <button type='button' className={'btn btn-primary  btn-medium btn-large float-end btn--mobile'} onClick={() => {submit();setTab('done')}}>Submit</button>
                             </div>
                         </div>
 

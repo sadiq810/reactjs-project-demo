@@ -30,7 +30,7 @@ const EmploymentComponent = ({user, history, setTab, loan, setState, tab}) => {
                                 {
                                     employment_statuses.map(emp => {
                                         return (
-                                            <div key={emp.id} className={"btn3 col-lg-2 col-md-4 col-sm-12"+(loan.employment_status == emp.title ? 'selected': '')} onClick={() => setState('employment_status', emp.title)}>
+                                            <div key={emp.id} className={"btn3 col-lg-2 col-md-4 col-sm-12 "+(loan.employment_status == emp.title ? 'selected': '')} onClick={() => setState('employment_status', emp.title)}>
                                                 {emp.title}
                                                 <article>{emp.description}</article>
                                             </div>

@@ -1,7 +1,8 @@
 import programs from '../../assets/data/programs';
 import user_programs from "../../assets/data/user_programs";
+import university from '../../assets/data/university';
 
-const ProgramsReducer = (state = {programs, user_programs}, action) => {
+const ProgramsReducer = (state = {programs, user_programs, universities : university}, action) => {
     switch (action.type) {
         case 'LOADING_PROGRAMS':
             return { ...state, loading: true, error: '' };

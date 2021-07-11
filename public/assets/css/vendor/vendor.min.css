@@ -2209,7 +2209,7 @@ progress {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  height: 4rem;
+ /* height: 4rem;*/
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -11176,11 +11176,11 @@ fieldset:disabled .btn {
   .d-print-none {
     display: none !important;
   }
-} /*! 
-* @package IcoFont 
-* @version 1.0.1 
-* @author IcoFont https://icofont.com 
-* @copyright Copyright (c) 2015 - 2018 IcoFont 
+} /*!
+* @package IcoFont
+* @version 1.0.1
+* @author IcoFont https://icofont.com
+* @copyright Copyright (c) 2015 - 2018 IcoFont
 * @license - https://icofont.com/license/
 */
 @font-face {
